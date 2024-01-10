@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Key : MonoBehaviour
 {
-    public float dynamics;
+    float dynamics;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,12 +17,17 @@ public class Key : MonoBehaviour
         
     }
 
-    public void keyPressed(float Strength) {
-        transform.localScale = new Vector3(transform.localScale.x, 1 - Strength, transform.localScale.x);
-        dynamics = Strength;
+    public void KeyPressed(float Strength) {
+        transform.localScale = new Vector3(transform.localScale.x, transform.localScale.y - Strength, transform.localScale.z);
+        dynamics = Strength; Debug.Log("keyDown");
     }
-    public void keyReleased() {
-        transform.localScale = new Vector3(transform.localScale.x, 1, transform.localScale.x);
-        dynamics = 0;
+    public void KeyReleased() {
+        transform.localScale = new Vector3(transform.localScale.x, (int)transform.localScale.y + 1, transform.localScale.z);
+        dynamics = 0;  Debug.Log("keyUp");
+    }
+
+    public bool KeyDown()
+    {
+        return dynamics > 0;
     }
 }
