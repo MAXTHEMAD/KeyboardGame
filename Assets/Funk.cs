@@ -70,5 +70,6 @@ public class Funk : MonoBehaviour
                        new note(130.707f, 130.890f, 7), new note(131.188f, 131.393f, 7), new note(131.666f, 131.783f, 7), new note(132.000f, 132.083f, 5),
                        new note(133.333f, 133.485f, 7), new note(133.846f, 133.966f, 7), new note(134.295f, 134.406f, 7), new note(134.643f, 134.757f, 5),
                        new note(135.977f, 136.139f, 9), new note(136.525f, 136.643f, 9), new note(136.972f, 137.085f, 9), new note(137.342f, 137.427f, 7), 
+                       new note(138.709f, 144.000f, 7), new note(144.000f, 146.653f, 9), new note(146.619f, 149.362f, 10), new note(149.362f, 154.674f, 7), new note(154.674f, 157.360f, 9), new note(157.338f, 160.002f, 10), 
     };
 }
