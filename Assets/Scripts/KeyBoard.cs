@@ -58,7 +58,7 @@ public class KeyBoard : MonoBehaviour
                 if (timeing >= currentSong[noteSpawnIndex].start - panelDelay)
                 {
                     KeyCube(ref currentSong[noteSpawnIndex]);
-                    notesOnboard.Add(currentSong[noteSpawnIndex]);
+                    
                     noteSpawnIndex++;
                 }
             }
@@ -150,17 +150,24 @@ public class KeyBoard : MonoBehaviour
         //Instantiate(keyCubePrefab,Vector3.forward * note.key,Quaternion.identity,transform.Find("Plane"),instantiateInWorldSpace:false);
         GameObject prefab = Instantiate(keyCubePrefab, transform.Find("Plane"));
         int[] nonSharp = { 0, 2, 4, 5, 7, 9, 11, 12, 14,16,17,19,21,23,24 };//all the white keys
-        if (Array.IndexOf(nonSharp, note.key) == -1 )
+        int[] sharp = { 1, 3, 6, 8, 10, 13, 15, 18, 20, 22 };//all the black keys
+        if (Array.IndexOf(sharp, note.key) != -1)
         {
-            prefab.transform.localPosition = (Vector3.right * Array.IndexOf(nonSharp, note.key -1)) + (Vector3.right * 0.75f);
+            prefab.transform.localPosition = (Vector3.right * Array.IndexOf(nonSharp, note.key - 1)) + (Vector3.right * 0.75f);
             prefab.transform.localScale = new Vector3(0.5f, 1, (note.end - note.start));
-        } 
-        else
+        }
+        else if (Array.IndexOf(nonSharp, note.key) != -1)
         {
             prefab.transform.localPosition = Vector3.right * Array.IndexOf(nonSharp, note.key);
-            prefab.transform.localScale = new Vector3(1,1,(note.end - note.start));
+            prefab.transform.localScale = new Vector3(1, 1, (note.end - note.start));
+        }
+        else
+        {
+            Destroy(prefab);
+            return;
         }
         note.keyCube = prefab;
+        notesOnboard.Add(note);
     }
 }
 
