@@ -23559,8 +23559,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -7740164840096716778, guid: 4a9075fad867cc34f9af670c5f6ddb7b, type: 3}
-  - {fileID: 3664703053484157274, guid: 4a9075fad867cc34f9af670c5f6ddb7b, type: 3}
+  - {fileID: 2100000, guid: 58a3dfd4c374e62468163b007f891ed7, type: 2}
+  - {fileID: 2100000, guid: 99e1f282f68b57a40ad6569bc93985e0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -23731,7 +23731,7 @@ SkinnedMeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: b1224ae7e892efc47a005d0413a60118, type: 2}
-  - {fileID: -1536519034987021355, guid: 4a9075fad867cc34f9af670c5f6ddb7b, type: 3}
+  - {fileID: 2100000, guid: 58a3dfd4c374e62468163b007f891ed7, type: 2}
   - {fileID: 2100000, guid: 6a09f3e9e3a26e1409b96b4d6e7b503e, type: 2}
   - {fileID: 2100000, guid: 99e1f282f68b57a40ad6569bc93985e0, type: 2}
   - {fileID: 2100000, guid: 3631add837edfd1449b9c60940e2c001, type: 2}
@@ -24499,7 +24499,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -4993592690987348483, guid: 4a9075fad867cc34f9af670c5f6ddb7b, type: 3}
+  - {fileID: 2100000, guid: 6a09f3e9e3a26e1409b96b4d6e7b503e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -25646,14 +25646,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7190141741995900623}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.37992823, y: 0.37992823, z: 0.59636784, w: 0.59636784}
-  m_LocalPosition: {x: -0.23294114, y: 1.0608525, z: 0.36609298}
+  m_LocalRotation: {x: -0.7188787, y: -0.028805818, z: -0.028434154, w: 0.6939563}
+  m_LocalPosition: {x: -0.521, y: 1.005, z: 0.375}
   m_LocalScale: {x: 1, y: 1, z: 0.824708}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1659512509046311586}
   m_Father: {fileID: 4653687978848826859}
-  m_LocalEulerAnglesHint: {x: -65, y: 0, z: 90}
+  m_LocalEulerAnglesHint: {x: -92.019, y: -1.4660034, z: -3.1740112}
 --- !u!1 &9137399509360676853
 GameObject:
   m_ObjectHideFlags: 0
