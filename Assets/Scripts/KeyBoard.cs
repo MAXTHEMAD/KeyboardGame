@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Net;
 using Unity.VisualScripting;
@@ -8,43 +9,27 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
+using UnityEngine.Events;
 
 public class KeyBoard : MonoBehaviour
 {
     public GameObject keyCubePrefab;
     public Keys keys;
-    public int score;
+    [SerializeField] float timingWindow = 0.5f;
+    [SerializeField] int score;
+    public UnityEvent OnSongSuccess;
+    public UnityEvent OnSongFailed;
 
     UnityEngine.UI.Slider healthBar;
 
-    [SerializeField] float timingWindow = 0.5f;
     const byte panelDelay = 8;
     float timeing;
     int noteSpawnIndex;
     float health = 100;
     
-    List<note> notesOnboard = new List<note>();
-    struct note
-    {
-        public float start;
-        public float end;
-        public int key;
-        public float dynamics;
-        public GameObject keyCube;
-        public note(float iStart, float iEnd, int iKey, float iDynamics = 0)
-        {
-            start = iStart;
-            end = iEnd;
-            key = iKey;
-            dynamics = iDynamics;
-            keyCube = null;
-        }
-    }                  
-
-    note[] songOne = { new note(1, 3, 0), new note(4, 7, 0), new note(5, 7, 4), new note(6, 7, 5), new note(9, 13, 2), new note(14, 15, 0), new note(14, 15, 5)};
-
-
-    note[] currentSong;
+    List<Song.note> notesOnboard = new List<Song.note>();
+                      
+    Song.note[] currentSong;
 
     private void Awake()
     {
@@ -54,7 +39,7 @@ public class KeyBoard : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        StartSong(0);
+        StartSong("Funk");
     }
 
     // Update is called once per frame
@@ -73,7 +58,7 @@ public class KeyBoard : MonoBehaviour
                 if (timeing >= currentSong[noteSpawnIndex].start - panelDelay)
                 {
                     KeyCube(ref currentSong[noteSpawnIndex]);
-                    notesOnboard.Add(currentSong[noteSpawnIndex]);
+                    
                     noteSpawnIndex++;
                 }
             }
@@ -96,22 +81,24 @@ public class KeyBoard : MonoBehaviour
             }
             yield return null;
         }
+        OnSongSuccess.Invoke();
     }
 
     private void SongFailed()
     {
         StopAllCoroutines();
-        foreach (note note in notesOnboard)
+        foreach (Song.note note in notesOnboard)
         {
             DestroyNote(note);
         }
 
         Debug.Log("Failed Song");
+        OnSongFailed.Invoke();
     }
 
     public void KeyState(int key, bool active)
     {
-        note noteEffected = notesOnboard.FirstOrDefault(x => x.key == key);
+        Song.note noteEffected = notesOnboard.FirstOrDefault(x => x.key == key);
         if (object.Equals(noteEffected, null))
             return;
         float timeingDiffrence = active ? Mathf.Abs(noteEffected.start - timeing) : Mathf.Abs(noteEffected.end - timeing);
@@ -130,7 +117,7 @@ public class KeyBoard : MonoBehaviour
     }
     public void StartSong(int songIndex) {
         StopAllCoroutines();
-        currentSong = songOne;
+        currentSong = Song.LoadSong(songIndex);
         noteSpawnIndex = 0;
         timeing = -panelDelay;
         notesOnboard.Clear();
@@ -139,40 +126,48 @@ public class KeyBoard : MonoBehaviour
     public void StartSong(string songName)
     {
         StopAllCoroutines();
-        currentSong = songOne;
+        currentSong = Song.LoadSong(songName);
         noteSpawnIndex = 0;
         timeing = -panelDelay;
         notesOnboard.Clear();
         StartCoroutine(SongPlaying());
     }
             
-    void MissedNote(note note)
+    
+    void MissedNote(Song.note note)
     {
         DestroyNote(note);
         health -= 25;
         healthBar.value = health * 0.01f;
     }
-    void DestroyNote(note note)
+    void DestroyNote(Song.note note)
     {
         Destroy(note.keyCube);
         notesOnboard.Remove(note);
     }
-    void KeyCube(ref note note)
+    void KeyCube(ref Song.note note)
     {
         //Instantiate(keyCubePrefab,Vector3.forward * note.key,Quaternion.identity,transform.Find("Plane"),instantiateInWorldSpace:false);
         GameObject prefab = Instantiate(keyCubePrefab, transform.Find("Plane"));
-        int[] nonSharp = { 0, 2, 4, 5, 7, 9, 11, 12, 14,16,17,19,21,23,24 };
-        if (Array.IndexOf(nonSharp, note.key) == -1 )
+        int[] nonSharp = { 0, 2, 4, 5, 7, 9, 11, 12, 14,16,17,19,21,23,24 };//all the white keys
+        int[] sharp = { 1, 3, 6, 8, 10, 13, 15, 18, 20, 22 };//all the black keys
+        if (Array.IndexOf(sharp, note.key) != -1)
         {
-            prefab.transform.localPosition = (Vector3.right * Array.IndexOf(nonSharp, note.key -1)) + (Vector3.right * 0.75f);
+            prefab.transform.localPosition = (Vector3.right * Array.IndexOf(nonSharp, note.key - 1)) + (Vector3.right * 0.75f);
             prefab.transform.localScale = new Vector3(0.5f, 1, (note.end - note.start));
-        } 
-        else
+        }
+        else if (Array.IndexOf(nonSharp, note.key) != -1)
         {
             prefab.transform.localPosition = Vector3.right * Array.IndexOf(nonSharp, note.key);
-            prefab.transform.localScale = new Vector3(1,1,(note.end - note.start));
+            prefab.transform.localScale = new Vector3(1, 1, (note.end - note.start));
+        }
+        else
+        {
+            Destroy(prefab);
+            return;
         }
         note.keyCube = prefab;
+        notesOnboard.Add(note);
     }
 }
 

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Key : MonoBehaviour
 {
+    public bool audioIn = false;
     float dynamics;
     // Start is called before the first frame update
     void Start()
@@ -20,10 +21,19 @@ public class Key : MonoBehaviour
     public void KeyPressed(float Strength) {
         transform.localScale = new Vector3(transform.localScale.x, transform.localScale.y - Strength, transform.localScale.z);
         dynamics = Strength; Debug.Log("keyDown");
+        if (audioIn)
+        {
+            GetComponent<Oscillator>().Go();
+        }
+        
     }
     public void KeyReleased() {
         transform.localScale = new Vector3(transform.localScale.x, (int)transform.localScale.y + 1, transform.localScale.z);
         dynamics = 0;  Debug.Log("keyUp");
+        if (audioIn)
+        {
+            GetComponent<Oscillator>().Stop();
+        }
     }
 
     public bool KeyDown()
