@@ -6,6 +6,7 @@ TagManager:
   tags:
   - AnimatedObject
   - Switch
+  - ConversationTrigger
   layers:
   - Default
   - TransparentFX

@@ -3,24 +3,28 @@ using UnityEngine;
 public class CameraMovement : MonoBehaviour
 {
     public float speed = 2.0f; // Adjust the speed of camera movement
-    public Vector3 targetPosition; // Set the target position for the camera to stop
+    public float followSpeed = 5f; // Adjust the speed of following
+    public float distanceFromTarget = 5f; // Adjust the initial distance from the animated object
+    public Transform target; // The object to follow
 
     void Update()
     {
-        // Calculate the new position based on the speed and time
+        // Move the camera forward based on the speed and time
         Vector3 newPosition = transform.position + Vector3.forward * speed * Time.deltaTime;
-
-        // Update the camera's position
         transform.position = newPosition;
 
-        // Check if the camera has reached or passed the target position
-        if (transform.position.z >= targetPosition.z)
+        // Follow the animated object if it is not null
+        if (target != null)
         {
-            // Set the camera's position to the target position
-            transform.position = targetPosition;
+            // Calculate the desired position for the camera
+            Vector3 desiredPosition = target.position - target.forward * distanceFromTarget;
+            desiredPosition.y = transform.position.y;
 
-            // Optionally, you may want to disable further updates or perform additional actions
-            enabled = false; // Disable the script to stop further updates
+            // Move towards the desired position using Lerp for smooth movement
+            transform.position = Vector3.Lerp(transform.position, desiredPosition, followSpeed * Time.deltaTime);
+
+            // Rotate the camera to match the rotation of the target object
+            transform.rotation = Quaternion.Slerp(transform.rotation, target.rotation, followSpeed * Time.deltaTime);
         }
     }
 }
