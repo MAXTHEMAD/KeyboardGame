@@ -14,7 +14,8 @@ public class Song
             new note[] { new note(1, 3, 0), new note(4, 7, 0), new note(5, 7, 4), new note(6, 7, 5), new note(9, 13, 2), new note(14, 15, 0), new note(14, 15, 5)}),
         new song(
             "allKeys",
-            new note[] { new note(0, 1, 0), new note(1, 2, 1), new note(2, 3, 2), new note(3, 4, 3), new note(4, 5, 4), new note(5, 6, 5), new note(6, 7, 6), new note(7, 8, 7), new note(8, 9, 8), new note(9, 10, 9)}),
+            new note[] { new note(0, 1, 0), new note(1, 2, 1), new note(2, 3, 2), new note(3, 4, 3), new note(4, 5, 4), new note(5, 6, 5), new note(6, 7, 6), new note(7, 8, 7), new note(8, 9, 8), new note(9, 10, 9), new note(10, 11, 10), new note(11, 12, 11), new note(12, 13, 12),
+                new note(13, 14, 13), new note(14, 15, 14), new note(15, 16, 15), new note(16, 17, 16), new note(17, 18, 17), new note(18, 19, 18), new note(19, 20, 19), new note(20, 21, 20), new note(21, 22, 21), new note(22, 23, 22), new note(23, 24, 23), new note(24, 25, 24)}),
         new song(
             "Funk",
             new note[]{new note(10.676f, 11.944f, 4),    new note(12f, 13.352f, 0),        new note(13.328f, 14.704f, 2),    new note(14.676f, 15.891f, -1),   new note(16.008f, 17.284f, 3),    new note(17.333f, 18.666f, 0),    new note(18.677f, 20.006f, 2),    new note(20.016f, 20.892f, -1),

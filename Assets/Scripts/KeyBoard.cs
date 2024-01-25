@@ -39,7 +39,7 @@ public class KeyBoard : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        StartSong("Funk");
+        StartSong("allKeys");
     }
 
     // Update is called once per frame
@@ -64,10 +64,16 @@ public class KeyBoard : MonoBehaviour
             }
             for (int i = 0; i < notesOnboard.Count; i++)
             {
-
-                if (timeing > notesOnboard[i].start + timingWindow && !keys.keysObj[notesOnboard[i].key].KeyDown())
+                try
                 {
-                    MissedNote(notesOnboard[i]);
+                    if (timeing > notesOnboard[i].start + timingWindow && !keys.keysObj[notesOnboard[i].key].KeyDown())
+                    {
+                        MissedNote(notesOnboard[i]);
+                    }
+                }catch (Exception e)
+                {
+                    Debug.Log(e.ToString());
+                    Debug.Log(":((((((((((((((((((((((((  failed at index: " + i);
                 }
             }
             if (health < 100)
