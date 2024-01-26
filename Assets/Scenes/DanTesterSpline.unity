@@ -23452,7 +23452,7 @@ MonoBehaviour:
   m_MaxSpeed: 10.854345
   m_EasingMode: 0
   m_AlignmentMode: 1
-  m_ObjectForwardAxis: 2
+  m_ObjectForwardAxis: 3
   m_ObjectUpAxis: 1
   m_StartOffset: 0
 --- !u!4 &1233221489964136062
@@ -24362,7 +24362,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5467062238461980497}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.000000030272844, y: -0.014747535, z: -4.4649823e-10, w: 0.9998913}
+  m_LocalRotation: {x: -0.000000021090413, y: 0.69660187, z: -0.000000021721856, w: 0.717458}
   m_LocalPosition: {x: 110.9378, y: 29.994501, z: 120.49003}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_ConstrainProportionsScale: 1
