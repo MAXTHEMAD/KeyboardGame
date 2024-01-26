@@ -17,14 +17,14 @@ public class CameraMovement : MonoBehaviour
         if (target != null)
         {
             // Calculate the desired position for the camera
-            Vector3 desiredPosition = target.position - target.forward * distanceFromTarget;
+            Vector3 desiredPosition = target.position + target.right * distanceFromTarget;
             desiredPosition.y = transform.position.y;
 
             // Move towards the desired position using Lerp for smooth movement
             transform.position = Vector3.Lerp(transform.position, desiredPosition, followSpeed * Time.deltaTime);
 
             // Rotate the camera to match the rotation of the target object
-            transform.rotation = Quaternion.Slerp(transform.rotation, target.rotation, followSpeed * Time.deltaTime);
+            transform.rotation = Quaternion.Slerp(transform.rotation, target.rotation *  Quaternion.Euler(0, -90, 0), followSpeed * Time.deltaTime);
         }
     }
 }

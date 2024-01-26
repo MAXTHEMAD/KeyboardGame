@@ -39,7 +39,7 @@ public class KeyBoard : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        StartSong("allKeys");
+
     }
 
     // Update is called once per frame
