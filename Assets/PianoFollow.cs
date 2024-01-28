@@ -1,41 +1,24 @@
 using UnityEngine;
 
-public class FollowObject : MonoBehaviour
-{
-    public Transform target; // The object to follow
+public class PianoFollow : MonoBehaviour
+
+{ 
+    public Transform target; // The object to follow (the animated object)
     public float followSpeed = 5f; // Adjust the speed of following
-
-    private float originalY;
-
-    void Start()
-    {
-        // Store the original y value
-        originalY = transform.position.y;
-    }
+    public float distanceBehind = 2f; // Adjust the distance behind the animated object
 
     void Update()
     {
         if (target != null)
         {
-            // Get the current position of the target object
-            Vector3 targetPosition = target.position;
+            // Calculate the desired position behind the target object
+            Vector3 targetPosition = target.position - target.forward * distanceBehind;
 
-            // Calculate the desired position for this object to move towards the target
-            Vector3 desiredPosition = new Vector3(targetPosition.x, originalY, targetPosition.z);
+            // Adjust the y-coordinate of the target position based on the piano's height
+            targetPosition.y = transform.position.y;
 
-            // Move towards the desired position using Lerp for smooth movement
-            transform.position = Vector3.Lerp(transform.position, desiredPosition, followSpeed * Time.deltaTime);
-
-            // Calculate the direction to the target (ignoring changes in y-direction)
-            Vector3 directionToTarget = target.position - transform.position;
-            directionToTarget.y = 0;
-
-            // Rotate to face the target on the x-axis
-            if (directionToTarget != Vector3.zero)
-            {
-                Quaternion targetRotation = Quaternion.LookRotation(directionToTarget);
-                transform.rotation = Quaternion.Euler(targetRotation.eulerAngles.x, 0, 0);
-            }
+            // Set the position directly without using Lerp
+            transform.position = targetPosition;
         }
     }
 }
