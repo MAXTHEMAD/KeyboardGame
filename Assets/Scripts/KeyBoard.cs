@@ -21,8 +21,9 @@ public class KeyBoard : MonoBehaviour
     public UnityEvent OnSongFailed;
 
     UnityEngine.UI.Slider healthBar;
+    Transform plane;
 
-    const byte panelDelay = 8;
+    float panelDelay = 16;
     float timeing;
     int noteSpawnIndex;
     float health = 100;
@@ -34,18 +35,13 @@ public class KeyBoard : MonoBehaviour
     private void Awake()
     {
         healthBar = GameObject.Find("HealthSlider").GetComponent<UnityEngine.UI.Slider>();
+        plane = transform.Find("Plane");
+        panelDelay *= transform.lossyScale.x;
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
     private void Update()
     {
-        
+        Debug.DrawLine(plane.position - (plane.forward * panelDelay), (plane.position - (plane.forward * panelDelay)) + plane.right * panelDelay*2.4f,Color.red);
     }
 
     IEnumerator SongPlaying()
@@ -72,8 +68,8 @@ public class KeyBoard : MonoBehaviour
                     }
                 }catch (Exception e)
                 {
-                    Debug.Log(e.ToString());
-                    Debug.Log(":((((((((((((((((((((((((  failed at index: " + i);
+                    Debug.LogWarning(e.ToString());
+                    Debug.LogWarning(":((((((  failed at index: " + i);
                 }
             }
             if (health < 100)
@@ -90,6 +86,12 @@ public class KeyBoard : MonoBehaviour
         OnSongSuccess.Invoke();
     }
 
+    IEnumerator AudioDelay()
+    {
+        yield return new WaitForSeconds(panelDelay);
+        GetComponent<AudioSource>().Play();
+    }
+
     private void SongFailed()
     {
         StopAllCoroutines();
@@ -97,7 +99,7 @@ public class KeyBoard : MonoBehaviour
         {
             DestroyNote(note);
         }
-
+        GetComponent<AudioSource>().Stop();
         Debug.Log("Failed Song");
         OnSongFailed.Invoke();
     }
@@ -127,6 +129,7 @@ public class KeyBoard : MonoBehaviour
         noteSpawnIndex = 0;
         timeing = -panelDelay;
         notesOnboard.Clear();
+        StartCoroutine(AudioDelay());
         StartCoroutine(SongPlaying());
     }
     public void StartSong(string songName)
@@ -136,6 +139,7 @@ public class KeyBoard : MonoBehaviour
         noteSpawnIndex = 0;
         timeing = -panelDelay;
         notesOnboard.Clear();
+        StartCoroutine(AudioDelay());
         StartCoroutine(SongPlaying());
     }
             
@@ -154,7 +158,7 @@ public class KeyBoard : MonoBehaviour
     void KeyCube(ref Song.note note)
     {
         //Instantiate(keyCubePrefab,Vector3.forward * note.key,Quaternion.identity,transform.Find("Plane"),instantiateInWorldSpace:false);
-        GameObject prefab = Instantiate(keyCubePrefab, transform.Find("Plane"));
+        GameObject prefab = Instantiate(keyCubePrefab, plane);
         int[] nonSharp = { 0, 2, 4, 5, 7, 9, 11, 12, 14,16,17,19,21,23,24 };//all the white keys
         int[] sharp = { 1, 3, 6, 8, 10, 13, 15, 18, 20, 22 };//all the black keys
         if (Array.IndexOf(sharp, note.key) != -1)
