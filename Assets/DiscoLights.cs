@@ -7,13 +7,15 @@ public class StrobeLightSettings
     public Light strobeLight; // Reference to the light component
     public float flashInterval = 1f; // Time interval between flashes
     public Color[] flashColors; // Array of colors for the strobe light
-    public float intensity = 1f; // Intensity of the strobe light
+    public float intensity = 90f; // Intensity of the strobe light
 }
 
 public class DiscoLights : MonoBehaviour
 {
     public StrobeLightSettings[] strobeLights; // Array of strobe light settings
-    public float spinSpeed = 30f; // Sphere spin speed in degrees per second
+    public float spinSpeed = 100f; // Adjust the spin speed as needed
+
+    public float moveDownDistance = 0.5f; // Distance to move down on activation
 
     private bool isAnimatedObjectInside = false;
 
@@ -33,6 +35,7 @@ public class DiscoLights : MonoBehaviour
             isAnimatedObjectInside = true;
             enabled = true; // Enable the script when the AnimatedObject enters
             SetStrobeLightsVisibility(true); // Show the strobe lights when the object enters
+            StartCoroutine(MoveDownAndSpin()); // Start the coroutine to move down and spin
         }
     }
 
@@ -42,7 +45,7 @@ public class DiscoLights : MonoBehaviour
         {
             isAnimatedObjectInside = false;
             enabled = false; // Disable the script when the AnimatedObject exits
-            StopCoroutine(SpinAndStrobe()); // Stop the coroutine when the object exits
+            StopAllCoroutines(); // Stop all coroutines when the object exits
             ResetStrobeLights(); // Reset the strobe lights when the object exits
             SetStrobeLightsVisibility(false); // Hide the strobe lights when the object exits
         }
@@ -68,15 +71,38 @@ public class DiscoLights : MonoBehaviour
         foreach (var settings in strobeLights)
         {
             settings.strobeLight.enabled = false;
-            settings.strobeLight.intensity = 1f;
+            settings.strobeLight.intensity = 5000f; // Adjust the intensity as needed
+
         }
+    }
+
+    IEnumerator MoveDownAndSpin()
+    {
+        // Move down
+        Vector3 initialPosition = transform.position;
+        Vector3 targetPosition = initialPosition - new Vector3(0f, moveDownDistance, 0f);
+        float elapsedTime = 0f;
+        float moveDuration = 1f; // Adjust the duration as needed
+
+        while (elapsedTime < moveDuration)
+        {
+            transform.position = Vector3.Lerp(initialPosition, targetPosition, elapsedTime / moveDuration);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        // Ensure the object is at the target position
+        transform.position = targetPosition;
+
+        // Start spinning and strobing
+        StartCoroutine(SpinAndStrobe());
     }
 
     IEnumerator SpinAndStrobe()
     {
-        while (true)
+        while (isAnimatedObjectInside)
         {
-            // Spin the sphere
+            // Increase the rotation speed by adjusting the spinSpeed value
             transform.Rotate(Vector3.up, spinSpeed * Time.deltaTime);
 
             // Flash each strobe light
@@ -86,7 +112,9 @@ public class DiscoLights : MonoBehaviour
             }
 
             yield return null;
-        }
+        
+   
+}
     }
 
     IEnumerator FlashStrobeLight(StrobeLightSettings settings)
@@ -108,7 +136,7 @@ public class DiscoLights : MonoBehaviour
         settings.strobeLight.enabled = false;
 
         // Reset intensity to its original value
-        settings.strobeLight.intensity = 1f;
+        settings.strobeLight.intensity = 80f;
 
         // Wait for the specified flash interval
         yield return new WaitForSeconds(settings.flashInterval);
