@@ -21,9 +21,9 @@ public class Oscillator : MonoBehaviour
     {
         frequency = 440 * Mathf.Pow(2, ((float)(48 + transform.GetSiblingIndex()) - 69f) / 12f);
     }
-    public void Go()
+    public void Go(float dynamics)
     {
-        gain = volume;
+        gain = volume * dynamics;
     }
 
     public void Stop()

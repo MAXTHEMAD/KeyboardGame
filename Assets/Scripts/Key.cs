@@ -18,7 +18,7 @@ public class Key : MonoBehaviour
         dynamics = Strength; Debug.Log("keyDown");
         if (audioIn)
         {
-            GetComponent<Oscillator>().Go();
+            GetComponent<Oscillator>().Go(Strength);
         }
         
     }
