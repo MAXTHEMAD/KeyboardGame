@@ -16697,6 +16697,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4896567931528758279, guid: 547eda354139c8b4e9fdf2998bc48cd0, type: 3}
   m_PrefabInstance: {fileID: 1091938761}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &1097236998 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5536254129938422022, guid: a724935dbb220e4428de5915c8aa5022, type: 3}
+  m_PrefabInstance: {fileID: 1384476021}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1112325948
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20584,6 +20589,79 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 34f46f644a32bca45a103380f9b5c23e, type: 3}
   m_PrefabInstance: {fileID: 246702870}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1384476021
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 4653687978848826859}
+    m_Modifications:
+    - target: {fileID: 5160959559496663996, guid: a724935dbb220e4428de5915c8aa5022, type: 3}
+      propertyPath: m_Name
+      value: PigFlyingAnimation
+      objectReference: {fileID: 0}
+    - target: {fileID: 5536254129938422022, guid: a724935dbb220e4428de5915c8aa5022, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.04999999
+      objectReference: {fileID: 0}
+    - target: {fileID: 5536254129938422022, guid: a724935dbb220e4428de5915c8aa5022, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 5536254129938422022, guid: a724935dbb220e4428de5915c8aa5022, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.04999999
+      objectReference: {fileID: 0}
+    - target: {fileID: 5536254129938422022, guid: a724935dbb220e4428de5915c8aa5022, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.3192364
+      objectReference: {fileID: 0}
+    - target: {fileID: 5536254129938422022, guid: a724935dbb220e4428de5915c8aa5022, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.9090999
+      objectReference: {fileID: 0}
+    - target: {fileID: 5536254129938422022, guid: a724935dbb220e4428de5915c8aa5022, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.9358686
+      objectReference: {fileID: 0}
+    - target: {fileID: 5536254129938422022, guid: a724935dbb220e4428de5915c8aa5022, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.71745795
+      objectReference: {fileID: 0}
+    - target: {fileID: 5536254129938422022, guid: a724935dbb220e4428de5915c8aa5022, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.000000021090411
+      objectReference: {fileID: 0}
+    - target: {fileID: 5536254129938422022, guid: a724935dbb220e4428de5915c8aa5022, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.6966018
+      objectReference: {fileID: 0}
+    - target: {fileID: 5536254129938422022, guid: a724935dbb220e4428de5915c8aa5022, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.000000021721855
+      objectReference: {fileID: 0}
+    - target: {fileID: 5536254129938422022, guid: a724935dbb220e4428de5915c8aa5022, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5536254129938422022, guid: a724935dbb220e4428de5915c8aa5022, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5536254129938422022, guid: a724935dbb220e4428de5915c8aa5022, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5536254129938422022, guid: a724935dbb220e4428de5915c8aa5022, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a724935dbb220e4428de5915c8aa5022, type: 3}
 --- !u!1001 &1386652837
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -32694,6 +32772,7 @@ Transform:
   - {fileID: 2706007081344293809}
   - {fileID: 9137112621377023515}
   - {fileID: 6704311453911892819}
+  - {fileID: 1097236998}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 91.73, z: 0}
 --- !u!1 &4710659431141988386
