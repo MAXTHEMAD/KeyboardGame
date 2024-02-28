@@ -165,6 +165,7 @@ public class KeyBoard : MonoBehaviour
         {
             prefab.transform.localPosition = (Vector3.right * Array.IndexOf(nonSharp, note.key - 1)) + (Vector3.right * 0.75f);
             prefab.transform.localScale = new Vector3(0.5f, 1, (note.end - note.start));
+            prefab.GetComponent<MeshRenderer>().material = (Material)Resources.Load("Black");
         }
         else if (Array.IndexOf(nonSharp, note.key) != -1)
         {
@@ -176,6 +177,7 @@ public class KeyBoard : MonoBehaviour
             Destroy(prefab);
             return;
         }
+        prefab.layer = 7;
         note.keyCube = prefab;
         notesOnboard.Add(note);
     }

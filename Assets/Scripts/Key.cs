@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.ProBuilder.Shapes;
 
 public class Key : MonoBehaviour
 {
@@ -19,21 +20,48 @@ public class Key : MonoBehaviour
         if (audioIn)
         {
             GetComponent<Oscillator>().Go(Strength);
+        } else
+        {
+            StopAllCoroutines();
+            GetComponent<AudioSource>().volume = Strength;
+            GetComponent<AudioSource>().Play();
         }
         
     }
     public void KeyReleased() {
         //transform.localScale = new Vector3(transform.localScale.x, (int)transform.localScale.y + 1, transform.localScale.z);
         transform.localRotation = Quaternion.Euler(new Vector3(0,0, sharp ? -1 : 0));
-        dynamics = 0;  Debug.Log("keyUp");
+        Debug.Log("keyUp");
         if (audioIn)
         {
             GetComponent<Oscillator>().Stop();
         }
+        else
+        {
+            StartCoroutine(stopSound());
+        }
+        dynamics = 0;
     }
 
     public bool KeyDown()
     {
         return dynamics > 0;
+    }
+
+    IEnumerator stopSound(float duration = 0.7f)
+    {
+        duration = duration < dynamics ? duration : dynamics;
+        //float time = Mathf.InverseLerp(0, duration, dynamics);
+        float time = duration;
+        Debug.Log(time);
+        Debug.Log(dynamics);
+        while (duration > 0)
+        {
+            time -= Time.deltaTime;
+            GetComponent<AudioSource>().volume = Mathf.Lerp(0f,duration,time);
+            yield return null;
+        }
+        GetComponent<AudioSource>().Stop();
+        GetComponent<AudioSource>().volume = 1;
     }
 }
