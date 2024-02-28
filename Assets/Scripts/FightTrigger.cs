@@ -1,26 +1,27 @@
+using System.Collections;
 using UnityEngine;
 
 public class FightTrigger : MonoBehaviour
 {
-    public Animator animatedObjectAnimator;
-    public Animator gnomeAnimator;
+    public GnomeController gnomeController;
 
     private bool hasEnteredTrigger = false;
 
     private void OnTriggerEnter(Collider other)
     {
-        if (hasEnteredTrigger)
-            return;
-
-        if (other.CompareTag("AnimatedObject"))
+        if (other.CompareTag("AnimatedObject") && !hasEnteredTrigger)
         {
-            animatedObjectAnimator.SetTrigger("CharacterHitting"); // Trigger animated object's animation
+            hasEnteredTrigger = true;
+            StartCoroutine(DelayedEnableAnimatorController());
         }
-        else if (other.CompareTag("Gnome"))
-        {
-            gnomeAnimator.SetTrigger("GnomeRunningAnimation"); // Trigger gnome's animation
-        }
+    }
 
-        hasEnteredTrigger = true;
+    private IEnumerator DelayedEnableAnimatorController()
+    {
+        // Wait for 3 minutes (180 seconds)
+        yield return new WaitForSeconds(210f);
+
+        // Enable the animator controller of the gnome
+        gnomeController.EnableAnimator();
     }
 }
