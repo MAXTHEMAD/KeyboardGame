@@ -14,11 +14,11 @@ public class FightTrigger : MonoBehaviour
 
         if (other.CompareTag("AnimatedObject"))
         {
-            animatedObjectAnimator.SetTrigger("playerAnimation"); // Trigger animated object's animation
+            animatedObjectAnimator.SetTrigger("CharacterHitting"); // Trigger animated object's animation
         }
         else if (other.CompareTag("Gnome"))
         {
-            gnomeAnimator.SetTrigger("gnomeAnimation"); // Trigger gnome's animation
+            gnomeAnimator.SetTrigger("GnomeRunningAnimation"); // Trigger gnome's animation
         }
 
         hasEnteredTrigger = true;
