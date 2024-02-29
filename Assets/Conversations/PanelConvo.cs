@@ -1,14 +1,12 @@
 using UnityEngine;
 using UnityEngine.UI;
-using System.Collections;
 using TMPro;
 
-public class ConversationTrigger : MonoBehaviour
+public class PanelConvo : MonoBehaviour
 {
-
-    public float displayDuration = 3.0f;
     public GameObject conversationPanel;
     public TextMeshProUGUI textDisplay;
+    public float displayDuration = 3.0f;
 
     private void Start()
     {
@@ -22,7 +20,6 @@ public class ConversationTrigger : MonoBehaviour
     {
         if (other.CompareTag("AnimatedObject"))
         {
-            Debug.Log("AnimatedObject entered the trigger zone.");
             StartConversation();
         }
     }
@@ -31,7 +28,6 @@ public class ConversationTrigger : MonoBehaviour
     {
         if (other.CompareTag("AnimatedObject"))
         {
-            Debug.Log("AnimatedObject exited the trigger zone.");
             EndConversation();
         }
     }
@@ -40,9 +36,8 @@ public class ConversationTrigger : MonoBehaviour
     {
         if (conversationPanel != null)
         {
-            Debug.Log("Starting conversation.");
-
             conversationPanel.SetActive(true);
+            textDisplay.text = "Argh! You'll never defeat us!";
             Invoke("EndConversation", displayDuration);
         }
     }
@@ -51,7 +46,6 @@ public class ConversationTrigger : MonoBehaviour
     {
         if (conversationPanel != null)
         {
-            Debug.Log("Ending conversation.");
             conversationPanel.SetActive(false);
         }
     }
