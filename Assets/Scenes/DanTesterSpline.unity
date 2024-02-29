@@ -18760,7 +18760,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e71987ec327a5b42adb5a87ec8cfdc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delaySeconds: 148
+  delaySeconds: 3
 --- !u!95 &990626198
 Animator:
   serializedVersion: 5
@@ -18769,7 +18769,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 990626196}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 76e818eb1fad4574ca1626887846ec3b, type: 2}
   m_CullingMode: 0
