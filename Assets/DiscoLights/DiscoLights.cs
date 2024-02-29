@@ -16,11 +16,14 @@ public class DiscoLights : MonoBehaviour
     public float spinSpeed = 100f; // Adjust the spin speed as needed
 
     public float moveDownDistance = 0.5f; // Distance to move down on activation
+    public float moveUpDistance = 0.5f; // Distance to move up on deactivation
+    private Vector3 originalPosition; // Original position of the disco ball
 
     private bool isAnimatedObjectInside = false;
 
     private void Start()
     {
+        originalPosition = transform.position; // Store the original position of the disco ball
         // Disable the script initially
         enabled = false;
 
@@ -48,6 +51,7 @@ public class DiscoLights : MonoBehaviour
             StopAllCoroutines(); // Stop all coroutines when the object exits
             ResetStrobeLights(); // Reset the strobe lights when the object exits
             SetStrobeLightsVisibility(false); // Hide the strobe lights when the object exits
+            StartCoroutine(MoveUp()); // Move the disco ball back to its original position
         }
     }
 
@@ -98,6 +102,25 @@ public class DiscoLights : MonoBehaviour
         StartCoroutine(SpinAndStrobe());
     }
 
+    IEnumerator MoveUp()
+    {
+        // Move up
+        float elapsedTime = 0f;
+        float moveDuration = 1f; // Adjust the duration as needed
+        Vector3 targetPosition = originalPosition;
+        Vector3 initialPosition = transform.position;
+
+        while (elapsedTime < moveDuration)
+        {
+            transform.position = Vector3.Lerp(initialPosition, targetPosition, elapsedTime / moveDuration);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        // Ensure the object is at the target position
+        transform.position = targetPosition;
+    }
+
     IEnumerator SpinAndStrobe()
     {
         while (isAnimatedObjectInside)
@@ -112,9 +135,7 @@ public class DiscoLights : MonoBehaviour
             }
 
             yield return null;
-        
-   
-}
+        }
     }
 
     IEnumerator FlashStrobeLight(StrobeLightSettings settings)
