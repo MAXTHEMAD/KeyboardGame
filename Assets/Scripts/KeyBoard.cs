@@ -15,6 +15,7 @@ public class KeyBoard : MonoBehaviour
 {
     public GameObject keyCubePrefab;
     public Keys keys;
+    [SerializeField] FeedBackText feedBackText;
     [SerializeField] float timingWindow = 0.5f;
     [SerializeField] int score;
     public UnityEvent OnSongSuccess;
@@ -112,7 +113,35 @@ public class KeyBoard : MonoBehaviour
         float timeingDiffrence = active ? Mathf.Abs(noteEffected.start - timeing) : Mathf.Abs(noteEffected.end - timeing);
         if (timeingDiffrence < timingWindow)
         {
-            score += (int)((((timeingDiffrence / timingWindow) - 1) * -1) * 128);//replace magic with score var
+            int scoreDiff = (int)((((timeingDiffrence / timingWindow) - 1) * -1) * 128);//replace magic with score var
+            score += scoreDiff;
+            //Debug.Log(scoreDiff);
+            int scoreBand = 0;
+            if (scoreDiff > 112)
+            {
+                scoreBand = 1;
+            } else if (scoreDiff > 96)
+            {
+                scoreBand = 2;
+            } else if (scoreDiff > 64)
+            {
+                scoreBand = 3;
+            }  else
+            {
+                scoreBand = 0;
+            }
+            feedBackText.feedback(scoreBand);
+            if (active)
+            {
+                try
+                {
+                    noteEffected.keyCube.GetComponent<MeshRenderer>().material = (Material)Resources.Load("scoreCol" + scoreBand);
+                } catch (Exception e)
+                {
+                   Debug.LogWarning(e);
+                }
+                
+            }
             if (!active)
             {
                 DestroyNote(noteEffected);
@@ -123,6 +152,7 @@ public class KeyBoard : MonoBehaviour
             MissedNote(noteEffected);
         }
     }
+
     public void StartSong(int songIndex) {
         StopAllCoroutines();
         currentSong = Song.LoadSong(songIndex);
