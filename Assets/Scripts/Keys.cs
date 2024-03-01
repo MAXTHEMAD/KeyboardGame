@@ -12,7 +12,7 @@ public class Keys : MonoBehaviour
     public KeyBoard Keyboard;
 
     InputAction[] keysInput;
-    public float[] keyStrengths;
+    float[] keyStrengths;
 
     private void Awake()
     {

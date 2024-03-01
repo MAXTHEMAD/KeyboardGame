@@ -53,9 +53,9 @@ public class Key : MonoBehaviour
         duration = duration < dynamics ? duration : dynamics;
         //float time = Mathf.InverseLerp(0, duration, dynamics);
         float time = duration;
-        Debug.Log(time);
-        Debug.Log(dynamics);
-        while (duration > 0)
+        //Debug.Log(time);
+        //Debug.Log(dynamics);
+        while (time > 0)
         {
             time -= Time.deltaTime;
             GetComponent<AudioSource>().volume = Mathf.Lerp(0f,duration,time);
