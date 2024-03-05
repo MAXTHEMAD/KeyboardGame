@@ -5323,7 +5323,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 936020902213601332, guid: 60da7423e40048749b19f1e11a32cb9f, type: 3}
       propertyPath: delaySeconds
-      value: 234
+      value: 234.3
       objectReference: {fileID: 0}
     - target: {fileID: 2277465610333593504, guid: 60da7423e40048749b19f1e11a32cb9f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5407,7 +5407,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7354778293123143417, guid: 60da7423e40048749b19f1e11a32cb9f, type: 3}
       propertyPath: delaySeconds
-      value: 237
+      value: 237.3
       objectReference: {fileID: 0}
     - target: {fileID: 8611472374721661086, guid: 60da7423e40048749b19f1e11a32cb9f, type: 3}
       propertyPath: m_UpdateMode
@@ -10191,7 +10191,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 936020902213601332, guid: 60da7423e40048749b19f1e11a32cb9f, type: 3}
       propertyPath: delaySeconds
-      value: 243.5
+      value: 243.6
       objectReference: {fileID: 0}
     - target: {fileID: 2277465610333593504, guid: 60da7423e40048749b19f1e11a32cb9f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10275,7 +10275,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7354778293123143417, guid: 60da7423e40048749b19f1e11a32cb9f, type: 3}
       propertyPath: delaySeconds
-      value: 246.5
+      value: 246.6
       objectReference: {fileID: 0}
     - target: {fileID: 8611472374721661086, guid: 60da7423e40048749b19f1e11a32cb9f, type: 3}
       propertyPath: m_Controller
@@ -21510,7 +21510,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 936020902213601332, guid: 60da7423e40048749b19f1e11a32cb9f, type: 3}
       propertyPath: delaySeconds
-      value: 243.4
+      value: 243.6
       objectReference: {fileID: 0}
     - target: {fileID: 2277465610333593504, guid: 60da7423e40048749b19f1e11a32cb9f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -21590,11 +21590,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7354778293123143417, guid: 60da7423e40048749b19f1e11a32cb9f, type: 3}
       propertyPath: speed
-      value: 22
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 7354778293123143417, guid: 60da7423e40048749b19f1e11a32cb9f, type: 3}
       propertyPath: delaySeconds
-      value: 246.4
+      value: 246.6
       objectReference: {fileID: 0}
     - target: {fileID: 8611472374721661086, guid: 60da7423e40048749b19f1e11a32cb9f, type: 3}
       propertyPath: m_Controller
@@ -24992,7 +24992,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e71987ec327a5b42adb5a87ec8cfdc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delaySeconds: 148.9
+  delaySeconds: 149
 --- !u!95 &990626198
 Animator:
   serializedVersion: 5
@@ -46910,7 +46910,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 936020902213601332, guid: 60da7423e40048749b19f1e11a32cb9f, type: 3}
       propertyPath: delaySeconds
-      value: 243.3
+      value: 243.4
       objectReference: {fileID: 0}
     - target: {fileID: 2277465610333593504, guid: 60da7423e40048749b19f1e11a32cb9f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -46994,7 +46994,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7354778293123143417, guid: 60da7423e40048749b19f1e11a32cb9f, type: 3}
       propertyPath: delaySeconds
-      value: 246.3
+      value: 246.4
       objectReference: {fileID: 0}
     - target: {fileID: 8611472374721661086, guid: 60da7423e40048749b19f1e11a32cb9f, type: 3}
       propertyPath: m_Controller
