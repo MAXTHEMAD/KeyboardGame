@@ -11,7 +11,7 @@ public class SetInitialPosition : MonoBehaviour
     void Start()
 
     {
-        Debug.Log("Initial Rotation: " + transform.rotation.eulerAngles);
+       
         // Set the initial position of the object
         transform.position = initialPosition;
         transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, 0f, transform.rotation.eulerAngles.z);
