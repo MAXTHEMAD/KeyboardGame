@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu.unity
     guid: 94be8528da26bfc44a7ed31981d895d4
   - enabled: 1
-    path: Assets/Menu(s)/PauseMenu.unity
+    path: Assets/Scenes/PauseMenu.unity
     guid: 0fb1a96ecd54b3a4ca195642bfd2158c
   - enabled: 1
     path: Assets/Scenes/DanTesterSpline.unity

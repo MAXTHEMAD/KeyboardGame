@@ -1351,6 +1351,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   keyCubePrefab: {fileID: 6969772071650731226, guid: c09bed8716d7b6d4394a5b7ec2bfeaaf, type: 3}
   keys: {fileID: 4208493915341693061}
+  feedBackText: {fileID: 0}
   timingWindow: 0.5
   score: 0
   OnSongSuccess:
@@ -1371,7 +1372,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.37615314
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -12849,7 +12850,6 @@ MonoBehaviour:
   actions: {fileID: -944628639613478452, guid: f50b88e4dba21a54680198c688caa938, type: 3}
   keysObj: []
   Keyboard: {fileID: 7939676878201434060}
-  keyStrengths: []
 --- !u!114 &9159238420034692622
 MonoBehaviour:
   m_ObjectHideFlags: 0
