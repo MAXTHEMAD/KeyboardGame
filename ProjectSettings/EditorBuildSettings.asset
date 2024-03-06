@@ -14,5 +14,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/DanTesterSpline.unity
     guid: f4494d4d1eafea94f95a65683632a37a
+  - enabled: 1
+    path: Assets/Scenes/Lofi.unity
+    guid: 02aced51b6c64a34481ef0f02684adc2
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 5c4fec83a8083304b9f5aafbae2b0088, type: 2}
