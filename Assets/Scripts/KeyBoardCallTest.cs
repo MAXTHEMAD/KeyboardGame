@@ -17,4 +17,9 @@ public class KeyBoardCallTest : MonoBehaviour
     {
         
     }
+
+    public void nextsong()
+    {
+
+    }
 }

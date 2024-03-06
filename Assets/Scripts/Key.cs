@@ -23,7 +23,7 @@ public class Key : MonoBehaviour
         } else
         {
             StopAllCoroutines();
-            GetComponent<AudioSource>().volume = Strength;
+            GetComponent<AudioSource>().volume = Strength * transform.parent.GetComponent<Keys>().volume;
             GetComponent<AudioSource>().Play();
         }
         
@@ -58,7 +58,7 @@ public class Key : MonoBehaviour
         while (time > 0)
         {
             time -= Time.deltaTime;
-            GetComponent<AudioSource>().volume = Mathf.Lerp(0f,duration,time);
+            GetComponent<AudioSource>().volume = Mathf.Lerp(0f,duration,time) * transform.parent.GetComponent<Keys>().volume;
             yield return null;
         }
         GetComponent<AudioSource>().Stop();

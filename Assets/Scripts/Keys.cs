@@ -10,6 +10,7 @@ public class Keys : MonoBehaviour
     public InputActionAsset actions;
     public Key[] keysObj;
     public KeyBoard Keyboard;
+    public float volume = 1.0f;
 
     InputAction[] keysInput;
     float[] keyStrengths;
