@@ -3902,7 +3902,7 @@ MonoBehaviour:
   pointB: {fileID: 713573436}
   pointC: {fileID: 1328574178}
   speed: 22
-  delaySeconds: 6.8
+  delaySeconds: 5.8
 --- !u!114 &147957329
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3915,7 +3915,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e71987ec327a5b42adb5a87ec8cfdc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delaySeconds: 3.8
+  delaySeconds: 2.8
 --- !u!1001 &150097163
 PrefabInstance:
   m_ObjectHideFlags: 0
