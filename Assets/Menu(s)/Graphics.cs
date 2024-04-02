@@ -1,47 +1,50 @@
-using TMPro;
 using UnityEngine;
-using System;
+using TMPro;
 
 public class Graphics : MonoBehaviour
 {
-    public TMP_Text qualityText;
-    public TMP_FontAsset lowQualityFont;
-    public TMP_FontAsset highQualityFont;
+    public TMP_Text qualityText; // Reference to the TMP_Text element
+    private string[] qualityLevels = { "Very Low", "Low", "Medium", "High", "Very High", "Ultra" };
+    private int qualityLevelIndex = 0; // Index to track the current quality level
 
-    private int qualityLevel = 0; // 0 is low, 1 is high
-    private FontManager fontManager;
+    // References to water elements and shaders
+    public GameObject[] waterElements;
+    public Renderer[] shaders;
 
     private void Start()
     {
-        fontManager = FindObjectOfType<FontManager>(); // Find the FontManager instance
-
         UpdateQualityText();
-        UpdateFont();
     }
 
     private void UpdateQualityText()
     {
-        qualityText.text = "Quality = " + (qualityLevel == 0 ? "Low" : "High");
-    }
-
-    private void UpdateFont()
-    {
-        if (fontManager != null)
-        {
-            fontManager.SetSelectedFont(qualityLevel == 0 ? lowQualityFont : highQualityFont);
-        }
+        qualityText.text = "Quality: " + qualityLevels[qualityLevelIndex];
     }
 
     public void ToggleQuality()
     {
-        qualityLevel = 1 - qualityLevel; // Toggles between 0 and 1
+        qualityLevelIndex = (qualityLevelIndex + 1) % qualityLevels.Length; // Cycle through quality levels
+        ApplySettings();
         UpdateQualityText();
-        UpdateFont();
     }
 
     public void ApplySettings()
     {
-        QualitySettings.SetQualityLevel(qualityLevel, true); // Apply graphics quality
-        UpdateFont(); // Apply font
+        if (qualityLevels[qualityLevelIndex] == "Ultra")
+        {
+            // Apply ultra settings
+            foreach (GameObject waterElement in waterElements)
+            {
+                waterElement.SetActive(true); // Activate all water elements
+            }
+            foreach (Renderer shader in shaders)
+            {
+                shader.enabled = true; // Enable all shaders
+            }
+        }
+        else
+        {
+            QualitySettings.SetQualityLevel(qualityLevelIndex, true); // Set quality level
+        }
     }
 }
