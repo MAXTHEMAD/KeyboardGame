@@ -3,10 +3,9 @@ using TMPro;
 
 public class FontManager : MonoBehaviour
 {
-    public TMP_FontAsset normalFont;
-    public TMP_FontAsset easyReadFont;
-
     private static FontManager instance;
+
+    public TMP_FontAsset selectedFont;
 
     private void Awake()
     {
@@ -21,39 +20,15 @@ public class FontManager : MonoBehaviour
         }
     }
 
-    private void Start()
+    // Method to set the selected font
+    public void SetSelectedFont(TMP_FontAsset font)
     {
-        SetFont();
+        selectedFont = font;
     }
 
-    public void ToggleFont()
+    // Method to get the selected font
+    public TMP_FontAsset GetSelectedFont()
     {
-        // Toggle the font selection
-        if (normalFont == TMP_FontAsset.defaultFontAsset)
-        {
-            normalFont = easyReadFont;
-        }
-        else
-        {
-            normalFont = TMP_FontAsset.defaultFontAsset;
-        }
-
-        // Apply the font changes
-        SetFont();
-    }
-
-    private void SetFont()
-    {
-        // Find all TextMeshProUGUI objects in the scene
-        TextMeshProUGUI[] textObjects = FindObjectsOfType<TextMeshProUGUI>();
-
-        // Apply the selected font to each TextMeshProUGUI object
-        foreach (TextMeshProUGUI textObject in textObjects)
-        {
-            if (normalFont != null)
-            {
-                textObject.font = normalFont;
-            }
-        }
+        return selectedFont;
     }
 }

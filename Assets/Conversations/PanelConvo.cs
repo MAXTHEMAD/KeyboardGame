@@ -1,4 +1,3 @@
-
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
@@ -39,16 +38,14 @@ public class PanelConvo : MonoBehaviour
         {
             conversationPanel.SetActive(true);
 
-            // Get the TextMeshProUGUI component from the conversationPanel
-            TextMeshProUGUI textMesh = conversationPanel.GetComponent<TextMeshProUGUI>();
+            // Get the FontManager instance
+            FontManager fontManager = FindObjectOfType<FontManager>();
 
-            // Check if the textMesh is not null and copy its text to textDisplay
-            if (textMesh != null)
+            // Apply the font to the textDisplay using FontManager
+            if (fontManager != null && textDisplay != null)
             {
-                textDisplay.text = textMesh.text;
+                textDisplay.font = fontManager.GetSelectedFont();
             }
-
-            Invoke("EndConversation", displayDuration);
         }
     }
 
