@@ -2640,7 +2640,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 936020902213601332, guid: 60da7423e40048749b19f1e11a32cb9f, type: 3}
       propertyPath: delaySeconds
-      value: 242.2
+      value: 170.2
       objectReference: {fileID: 0}
     - target: {fileID: 2277465610333593504, guid: 60da7423e40048749b19f1e11a32cb9f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2724,7 +2724,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7354778293123143417, guid: 60da7423e40048749b19f1e11a32cb9f, type: 3}
       propertyPath: delaySeconds
-      value: 245.2
+      value: 173.2
       objectReference: {fileID: 0}
     - target: {fileID: 8611472374721661086, guid: 60da7423e40048749b19f1e11a32cb9f, type: 3}
       propertyPath: m_Controller
@@ -2895,7 +2895,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e71987ec327a5b42adb5a87ec8cfdc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delaySeconds: 13
+  delaySeconds: 10
 --- !u!1001 &119571905
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3902,7 +3902,7 @@ MonoBehaviour:
   pointB: {fileID: 713573436}
   pointC: {fileID: 1328574178}
   speed: 22
-  delaySeconds: 5.8
+  delaySeconds: 5.7
 --- !u!114 &147957329
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3915,7 +3915,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e71987ec327a5b42adb5a87ec8cfdc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delaySeconds: 2.8
+  delaySeconds: 2.7
 --- !u!1001 &150097163
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5323,7 +5323,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 936020902213601332, guid: 60da7423e40048749b19f1e11a32cb9f, type: 3}
       propertyPath: delaySeconds
-      value: 234.3
+      value: 162.3
       objectReference: {fileID: 0}
     - target: {fileID: 2277465610333593504, guid: 60da7423e40048749b19f1e11a32cb9f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5407,7 +5407,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7354778293123143417, guid: 60da7423e40048749b19f1e11a32cb9f, type: 3}
       propertyPath: delaySeconds
-      value: 237.3
+      value: 165.3
       objectReference: {fileID: 0}
     - target: {fileID: 8611472374721661086, guid: 60da7423e40048749b19f1e11a32cb9f, type: 3}
       propertyPath: m_UpdateMode
@@ -10272,7 +10272,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 936020902213601332, guid: 60da7423e40048749b19f1e11a32cb9f, type: 3}
       propertyPath: delaySeconds
-      value: 243.6
+      value: 171.6
       objectReference: {fileID: 0}
     - target: {fileID: 2277465610333593504, guid: 60da7423e40048749b19f1e11a32cb9f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10356,7 +10356,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7354778293123143417, guid: 60da7423e40048749b19f1e11a32cb9f, type: 3}
       propertyPath: delaySeconds
-      value: 246.6
+      value: 174.6
       objectReference: {fileID: 0}
     - target: {fileID: 8611472374721661086, guid: 60da7423e40048749b19f1e11a32cb9f, type: 3}
       propertyPath: m_Controller
@@ -12945,7 +12945,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e71987ec327a5b42adb5a87ec8cfdc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delaySeconds: 13
+  delaySeconds: 10
 --- !u!1001 &541888585
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17120,7 +17120,7 @@ Transform:
   m_GameObject: {fileID: 713573435}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -606.06, y: -5.090002, z: -510.32}
+  m_LocalPosition: {x: -606.06, y: -5.090002, z: -506.37}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -21591,7 +21591,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 936020902213601332, guid: 60da7423e40048749b19f1e11a32cb9f, type: 3}
       propertyPath: delaySeconds
-      value: 243.6
+      value: 171.6
       objectReference: {fileID: 0}
     - target: {fileID: 2277465610333593504, guid: 60da7423e40048749b19f1e11a32cb9f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -21675,7 +21675,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7354778293123143417, guid: 60da7423e40048749b19f1e11a32cb9f, type: 3}
       propertyPath: delaySeconds
-      value: 246.6
+      value: 174.6
       objectReference: {fileID: 0}
     - target: {fileID: 8611472374721661086, guid: 60da7423e40048749b19f1e11a32cb9f, type: 3}
       propertyPath: m_Controller
@@ -23187,7 +23187,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 936020902213601332, guid: 60da7423e40048749b19f1e11a32cb9f, type: 3}
       propertyPath: delaySeconds
-      value: 238
+      value: 166
       objectReference: {fileID: 0}
     - target: {fileID: 2277465610333593504, guid: 60da7423e40048749b19f1e11a32cb9f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -23271,7 +23271,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7354778293123143417, guid: 60da7423e40048749b19f1e11a32cb9f, type: 3}
       propertyPath: delaySeconds
-      value: 241
+      value: 169
       objectReference: {fileID: 0}
     - target: {fileID: 8611472374721661086, guid: 60da7423e40048749b19f1e11a32cb9f, type: 3}
       propertyPath: m_Controller
@@ -25073,7 +25073,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e71987ec327a5b42adb5a87ec8cfdc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delaySeconds: 149
+  delaySeconds: 106.5
 --- !u!95 &990626198
 Animator:
   serializedVersion: 5
@@ -25740,7 +25740,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e71987ec327a5b42adb5a87ec8cfdc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delaySeconds: 13
+  delaySeconds: 10
 --- !u!1001 &1014830842
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -47949,7 +47949,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 936020902213601332, guid: 60da7423e40048749b19f1e11a32cb9f, type: 3}
       propertyPath: delaySeconds
-      value: 243.4
+      value: 171.4
       objectReference: {fileID: 0}
     - target: {fileID: 2277465610333593504, guid: 60da7423e40048749b19f1e11a32cb9f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -48033,7 +48033,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7354778293123143417, guid: 60da7423e40048749b19f1e11a32cb9f, type: 3}
       propertyPath: delaySeconds
-      value: 246.4
+      value: 174.4
       objectReference: {fileID: 0}
     - target: {fileID: 8611472374721661086, guid: 60da7423e40048749b19f1e11a32cb9f, type: 3}
       propertyPath: m_Controller
