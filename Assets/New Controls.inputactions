@@ -245,6 +245,17 @@
                 },
                 {
                     "name": "",
+                    "id": "a465e96b-6c0b-4dee-b391-1a3e3c6a7502",
+                    "path": "<Keyboard>/z",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "C3",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "db33cbb6-1448-4a20-aac7-7034fe88b9ac",
                     "path": "<MidiDevice>/note050",
                     "interactions": "",
@@ -256,8 +267,30 @@
                 },
                 {
                     "name": "",
+                    "id": "bc323dac-da7b-45da-9e5d-78e20435ff74",
+                    "path": "<Keyboard>/x",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "D3",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "1a3752ac-3528-4600-ac08-e38ad7bda97e",
                     "path": "<MidiDevice>/note052",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "E3",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "04617baa-ad98-427d-a8e5-dc9465fe8c2e",
+                    "path": "<Keyboard>/c",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -300,6 +333,17 @@
                 },
                 {
                     "name": "",
+                    "id": "7cbaba69-be61-4b00-8632-1a05e73bdd30",
+                    "path": "<Keyboard>/s",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "C#3",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "f8859838-45ed-4031-8bc7-025ecb9e26a0",
                     "path": "<MidiDevice>/note056",
                     "interactions": "",
@@ -313,6 +357,17 @@
                     "name": "",
                     "id": "23018c8b-0c9e-484e-a206-8f612a4a069d",
                     "path": "<MidiDevice>/note051",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "D#3",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "014c6269-5e9e-478e-b056-32bbda3d2a7f",
+                    "path": "<Keyboard>/d",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

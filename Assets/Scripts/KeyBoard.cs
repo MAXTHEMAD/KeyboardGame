@@ -108,25 +108,31 @@ public class KeyBoard : MonoBehaviour
     public void KeyState(int key, bool active)
     {
         Song.note noteEffected = notesOnboard.FirstOrDefault(x => x.key == key);
-        if (object.Equals(noteEffected, null))
+        if (noteEffected.end == 0)//(object.Equals(noteEffected, null))
+        {
             return;
+        }
+        Debug.Log(noteEffected.start + " hehe " + noteEffected.end);
         float timeingDiffrence = active ? Mathf.Abs(noteEffected.start - timeing) : Mathf.Abs(noteEffected.end - timeing);
         if (timeingDiffrence < timingWindow)
         {
-            int scoreDiff = (int)((((timeingDiffrence / timingWindow) - 1) * -1) * 128);//replace magic with score var
+            int scoreDiff = (int)((((timeingDiffrence / timingWindow) - 1) * -1) * 128);//replace magic with score var  //128 is perfect
             score += scoreDiff;
             //Debug.Log(scoreDiff);
             int scoreBand = 0;
-            if (scoreDiff > 112)
+            if (scoreDiff > 112)     //getting over 112 means you were within an eith of the timing window
             {
                 scoreBand = 1;
-            } else if (scoreDiff > 96)
+            }
+            else if (scoreDiff > 96) //getting over 96 means you were within an quarter of the timing window
             {
                 scoreBand = 2;
-            } else if (scoreDiff > 64)
+            }
+            else if (scoreDiff > 64) //getting over 64 means you were within an half of the timing window
             {
                 scoreBand = 3;
-            }  else
+            }
+            else
             {
                 scoreBand = 0;
             }
@@ -136,11 +142,13 @@ public class KeyBoard : MonoBehaviour
                 try
                 {
                     noteEffected.keyCube.GetComponent<MeshRenderer>().material = (Material)Resources.Load("scoreCol" + scoreBand);
-                } catch (Exception e)
-                {
-                   Debug.LogWarning(e);
+                    keys.keysObj[key].transform.GetChild(0).GetComponent<MeshRenderer>().material = (Material)Resources.Load("scoreCol" + scoreBand);
                 }
-                
+                catch (Exception e)
+                {
+                    Debug.LogWarning(e);
+                }
+
             }
             if (!active)
             {
@@ -150,6 +158,15 @@ public class KeyBoard : MonoBehaviour
         else
         {
             MissedNote(noteEffected);
+        }
+        if (!active)
+        {
+            int[] sharp = { 1, 3, 6, 8, 10, 13, 15, 18, 20, 22 };//all the black keys
+            if (Array.IndexOf(sharp, key) == -1) {
+                keys.keysObj[key].transform.GetChild(0).GetComponent<MeshRenderer>().material = (Material)Resources.Load("White");
+            } else {
+                keys.keysObj[key].transform.GetChild(0).GetComponent<MeshRenderer>().material = (Material)Resources.Load("Black");
+            }
         }
     }
 
@@ -195,7 +212,7 @@ public class KeyBoard : MonoBehaviour
         {
             prefab.transform.localPosition = (Vector3.right * Array.IndexOf(nonSharp, note.key - 1)) + (Vector3.right * 0.75f);
             prefab.transform.localScale = new Vector3(0.5f, 1, (note.end - note.start));
-            prefab.GetComponent<MeshRenderer>().material = (Material)Resources.Load("Black");
+            prefab.GetComponent<MeshRenderer>().material = (Material)Resources.Load("BlackCube");
         }
         else if (Array.IndexOf(nonSharp, note.key) != -1)
         {
