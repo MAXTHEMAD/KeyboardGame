@@ -17,6 +17,7 @@ public class KeyBoard : MonoBehaviour
     public Keys keys;
     [SerializeField] FeedBackText feedBackText;
     [SerializeField] float timingWindow = 0.5f;
+    [SerializeField] float panelDelay = 16;
     [SerializeField] int score;
     public UnityEvent OnSongSuccess;
     public UnityEvent OnSongFailed;
@@ -24,10 +25,9 @@ public class KeyBoard : MonoBehaviour
     UnityEngine.UI.Slider healthBar;
     Transform plane;
 
-    float panelDelay = 16;
-    float timeing;
-    int noteSpawnIndex;
-    float health = 100;
+    private float timeing;
+    private int noteSpawnIndex;
+    private float health = 100;
     
     List<Song.note> notesOnboard = new List<Song.note>();
                       
@@ -35,7 +35,7 @@ public class KeyBoard : MonoBehaviour
 
     private void Awake()
     {
-        healthBar = GameObject.Find("HealthSlider").GetComponent<UnityEngine.UI.Slider>();
+        healthBar = GameObject.Find("HealthBar").GetComponent<UnityEngine.UI.Slider>();
         plane = transform.Find("Plane");
         panelDelay *= transform.lossyScale.x;
     }
@@ -44,6 +44,23 @@ public class KeyBoard : MonoBehaviour
     {
         Debug.DrawLine(plane.position - (plane.forward * panelDelay), (plane.position - (plane.forward * panelDelay)) + plane.right * panelDelay*2.4f,Color.red);
     }
+    /*private void OnDrawGizmos()
+    {
+        if (plane == null)
+            plane = transform.Find("Plane");
+        Gizmos.color = Color.red;
+        Vector3 str = transform.InverseTransformPoint(plane.position) - ((transform.InverseTransformPoint(plane.forward) * (panelDelay)));
+        // * plane.localScale.z)));
+        //str.z *= 0.1f;
+        Vector3 end = (transform.InverseTransformPoint(plane.position) - (plane.forward * panelDelay)) + plane.right * panelDelay * 2.4f;
+        //Gizmos.DrawLine(str, end);
+        //Gizmos.DrawLine(Vector3.zero, Vector3.up);
+        Vector3 startPoint = transform.InverseTransformPoint(plane.position - (plane.forward * panelDelay));
+        Vector3 endPoint = transform.InverseTransformPoint(plane.position + plane.right * panelDelay * 2.4f);
+
+        // Draw the line in local space
+        Gizmos.DrawLine(startPoint, endPoint);
+    }*/
 
     IEnumerator SongPlaying()
     {
@@ -194,7 +211,7 @@ public class KeyBoard : MonoBehaviour
     void MissedNote(Song.note note)
     {
         DestroyNote(note);
-        health -= 25;
+        health -= 22;
         healthBar.value = health * 0.01f;
     }
     void DestroyNote(Song.note note)
