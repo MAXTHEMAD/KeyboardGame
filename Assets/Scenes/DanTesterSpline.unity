@@ -4424,12 +4424,26 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 147957322}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0e71987ec327a5b42adb5a87ec8cfdc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   delaySeconds: 2.7
+--- !u!114 &147957331
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 147957322}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b3f76bb8ac37e547b780f5d878702ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delaySeconds: 2.7
+  idleAnimationClip: {fileID: 1827226128182048838, guid: b00597e91942cbb48bc0e2dfac9801b3, type: 3}
 --- !u!1 &148853604
 GameObject:
   m_ObjectHideFlags: 0
@@ -51956,6 +51970,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 0b5dbabe52bd09a4389af352e8c8887b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 147957328}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 0b5dbabe52bd09a4389af352e8c8887b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 147957331}
   m_SourcePrefab: {fileID: 100100000, guid: 0b5dbabe52bd09a4389af352e8c8887b, type: 3}
 --- !u!1 &1504163587
 GameObject:
