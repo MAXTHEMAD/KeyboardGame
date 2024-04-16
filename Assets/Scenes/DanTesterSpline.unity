@@ -10963,7 +10963,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 936020902213601332, guid: 60da7423e40048749b19f1e11a32cb9f, type: 3}
       propertyPath: delaySeconds
-      value: 120
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 2277465610333593504, guid: 60da7423e40048749b19f1e11a32cb9f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -11059,7 +11059,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7354778293123143417, guid: 60da7423e40048749b19f1e11a32cb9f, type: 3}
       propertyPath: delaySeconds
-      value: 120
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8611472374721661086, guid: 60da7423e40048749b19f1e11a32cb9f, type: 3}
       propertyPath: m_Controller
@@ -38941,66 +38941,66 @@ MonoBehaviour:
     - Mode: 0
       Tension: 0.5
       m_DistanceToInterpolation:
-      - Distance: -1
-        T: -1
       - Distance: 0
         T: 0
-      - Distance: 0
-        T: 0
-      - Distance: 0
-        T: 0
-      - Distance: 0
-        T: 0
-      - Distance: 0
-        T: 0
-      - Distance: 0
-        T: 0
-      - Distance: 0
-        T: 0
-      - Distance: 0
-        T: 0
-      - Distance: 0
-        T: 0
-      - Distance: 0
-        T: 0
-      - Distance: 0
-        T: 0
-      - Distance: 0
-        T: 0
-      - Distance: 0
-        T: 0
-      - Distance: 0
-        T: 0
-      - Distance: 0
-        T: 0
-      - Distance: 0
-        T: 0
-      - Distance: 0
-        T: 0
-      - Distance: 0
-        T: 0
-      - Distance: 0
-        T: 0
-      - Distance: 0
-        T: 0
-      - Distance: 0
-        T: 0
-      - Distance: 0
-        T: 0
-      - Distance: 0
-        T: 0
-      - Distance: 0
-        T: 0
-      - Distance: 0
-        T: 0
-      - Distance: 0
-        T: 0
-      - Distance: 0
-        T: 0
-      - Distance: 0
-        T: 0
-      - Distance: 0
-        T: 0
+      - Distance: 0.07400912
+        T: 0.03448276
+      - Distance: 0.13217321
+        T: 0.06896552
+      - Distance: 0.17559032
+        T: 0.10344828
+      - Distance: 0.20553252
+        T: 0.13793103
+      - Distance: 0.22319861
+        T: 0.1724138
+      - Distance: 0.22966878
+        T: 0.20689656
+      - Distance: 0.23325174
+        T: 0.2413793
+      - Distance: 0.24558741
+        T: 0.27586207
+      - Distance: 0.26557782
+        T: 0.31034482
+      - Distance: 0.29196495
+        T: 0.3448276
+      - Distance: 0.32368252
+        T: 0.37931034
+      - Distance: 0.35951796
+        T: 0.41379312
+      - Distance: 0.39824066
+        T: 0.44827586
+      - Distance: 0.4387843
+        T: 0.4827586
+      - Distance: 0.47983137
+        T: 0.51724136
+      - Distance: 0.520494
+        T: 0.55172414
+      - Distance: 0.5591572
+        T: 0.5862069
+      - Distance: 0.5949609
+        T: 0.62068963
+      - Distance: 0.6267242
+        T: 0.6551724
+      - Distance: 0.65308386
+        T: 0.6896552
+      - Distance: 0.6730882
+        T: 0.7241379
+      - Distance: 0.6854238
+        T: 0.7586207
+      - Distance: 0.68894756
+        T: 0.79310346
+      - Distance: 0.69540364
+        T: 0.82758623
+      - Distance: 0.71302414
+        T: 0.86206895
+      - Distance: 0.74296635
+        T: 0.8965517
+      - Distance: 0.7863973
+        T: 0.9310345
+      - Distance: 0.84454757
+        T: 0.9655172
+      - Distance: 0.91855663
+        T: 1
     m_Closed: 0
     m_IntData:
       m_Data: []
@@ -41423,7 +41423,7 @@ MonoBehaviour:
   pointB: {fileID: 1240898056}
   pointC: {fileID: 2097730197}
   speed: 18
-  delaySeconds: 70
+  delaySeconds: 50
 --- !u!95 &1165623170
 Animator:
   serializedVersion: 5
@@ -41457,7 +41457,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e71987ec327a5b42adb5a87ec8cfdc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delaySeconds: 70
+  delaySeconds: 50
 --- !u!1 &1168341701
 GameObject:
   m_ObjectHideFlags: 0
@@ -74436,8 +74436,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5467062238461980497}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.000000021090413, y: 0.69660187, z: -0.000000021721856, w: 0.717458}
-  m_LocalPosition: {x: 110.9378, y: 29.994501, z: 120.49003}
+  m_LocalRotation: {x: 0.02906542, y: -0.24355961, z: 0.00756916, w: 0.96942085}
+  m_LocalPosition: {x: 737.75244, y: 55.279068, z: 822.8867}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -74485,63 +74485,6 @@ Transform:
   - {fileID: 8751616756149576877}
   m_Father: {fileID: 5090385422127864935}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &4738410421671914062
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1349872531404635369, guid: a776f2d70998fa94fa205e7ba0bf1e1e, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 124.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1349872531404635369, guid: a776f2d70998fa94fa205e7ba0bf1e1e, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 30.15
-      objectReference: {fileID: 0}
-    - target: {fileID: 1349872531404635369, guid: a776f2d70998fa94fa205e7ba0bf1e1e, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 203.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1349872531404635369, guid: a776f2d70998fa94fa205e7ba0bf1e1e, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: -0.6396906
-      objectReference: {fileID: 0}
-    - target: {fileID: 1349872531404635369, guid: a776f2d70998fa94fa205e7ba0bf1e1e, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1349872531404635369, guid: a776f2d70998fa94fa205e7ba0bf1e1e, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0.76863253
-      objectReference: {fileID: 0}
-    - target: {fileID: 1349872531404635369, guid: a776f2d70998fa94fa205e7ba0bf1e1e, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1349872531404635369, guid: a776f2d70998fa94fa205e7ba0bf1e1e, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1349872531404635369, guid: a776f2d70998fa94fa205e7ba0bf1e1e, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 259.537
-      objectReference: {fileID: 0}
-    - target: {fileID: 1349872531404635369, guid: a776f2d70998fa94fa205e7ba0bf1e1e, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7894285180478718419, guid: a776f2d70998fa94fa205e7ba0bf1e1e, type: 3}
-      propertyPath: m_Name
-      value: GnomeTakingPrincess
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: a776f2d70998fa94fa205e7ba0bf1e1e, type: 3}
 --- !u!1 &4900018972074766763
 GameObject:
   m_ObjectHideFlags: 0
@@ -76218,7 +76161,6 @@ SceneRoots:
   - {fileID: 1432549838}
   - {fileID: 983291724}
   - {fileID: 337521469}
-  - {fileID: 4738410421671914062}
   - {fileID: 784939451}
   - {fileID: 1978335000}
   - {fileID: 1686184739}

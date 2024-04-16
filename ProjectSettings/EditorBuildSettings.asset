@@ -17,5 +17,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Lofi.unity
     guid: 02aced51b6c64a34481ef0f02684adc2
+  - enabled: 1
+    path: Assets/Scenes/EndScreen.unity
+    guid: e427ca5eb0ec17d45adb0853f53dd23b
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 5c4fec83a8083304b9f5aafbae2b0088, type: 2}

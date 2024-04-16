@@ -9,7 +9,7 @@ public class PassThroughTrigger : MonoBehaviour
         if (other.CompareTag("AnimatedObject"))
         {
             // Load the main menu scene
-            SceneManager.LoadScene("Menu");
+            SceneManager.LoadScene("EndScreen");
         }
     }
 
