@@ -48803,7 +48803,7 @@ TrailRenderer:
         inWeight: 0.33333334
         outWeight: 0.56977373
       - serializedVersion: 3
-        time: 0.104515076
+        time: 0.036140442
         value: 0
         inSlope: 0
         outSlope: 0
@@ -57065,7 +57065,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 624327044256471688, guid: b27304a39d6342549936825e42888c3f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 10.34
+      value: 12.45
       objectReference: {fileID: 0}
     - target: {fileID: 624327044256471688, guid: b27304a39d6342549936825e42888c3f, type: 3}
       propertyPath: m_LocalPosition.y
@@ -60847,7 +60847,7 @@ TrailRenderer:
         inWeight: 0.33333334
         outWeight: 0.56977373
       - serializedVersion: 3
-        time: 0.10734558
+        time: 0.036117554
         value: 0
         inSlope: 0
         outSlope: 0
