@@ -3778,7 +3778,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 741309df7a0a7f842ad0ffe968e43143, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedFont: {fileID: 0}
+  selectedFont: {fileID: 11400000, guid: d3f463fb4757e0847b6fa4430f00d561, type: 2}
 --- !u!4 &1051469419
 Transform:
   m_ObjectHideFlags: 0
