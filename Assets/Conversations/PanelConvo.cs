@@ -6,7 +6,7 @@ public class PanelConvo : MonoBehaviour
 {
     public GameObject conversationPanel;
     public TextMeshProUGUI textDisplay;
-    public float displayDuration = 3.0f;
+    public FontManager fontManager; // Reference to FontManager script
 
     private void Start()
     {
@@ -38,13 +38,21 @@ public class PanelConvo : MonoBehaviour
         {
             conversationPanel.SetActive(true);
 
-            // Get the FontManager instance
-            FontManager fontManager = FindObjectOfType<FontManager>();
-
             // Apply the font to the textDisplay using FontManager
             if (fontManager != null && textDisplay != null)
             {
-                textDisplay.font = fontManager.GetSelectedFont();
+                // Debug log to track font assignment
+                Debug.Log("Font before assignment: " + textDisplay.font.name);
+
+                // Get the selected font from FontManager and apply it
+                textDisplay.font = fontManager.selectedFont;
+
+                // Debug log to verify font assignment
+                Debug.Log("Font after assignment: " + textDisplay.font.name);
+            }
+            else
+            {
+                Debug.LogWarning("FontManager or textDisplay not found.");
             }
         }
     }
