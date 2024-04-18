@@ -3,13 +3,14 @@ using TMPro;
 
 public class FontManager : MonoBehaviour
 {
+    public bool IsEasyReadMode { get; set; }
+
+    public TMP_FontAsset normalFont;
+    public TMP_FontAsset easyReadFont;
+
+    public TMP_FontAsset selectedFont;
+
     private static FontManager instance;
-
-    public TMP_FontAsset defaultFont;
-    public TMP_FontAsset alternativeFont;
-    public TMP_FontAsset selectedFont; // Change the access modifier to public
-
-    private string selectedFontKey = "SelectedFont"; // Key for PlayerPrefs
 
     private void Awake()
     {
@@ -23,71 +24,31 @@ public class FontManager : MonoBehaviour
             Destroy(gameObject);
         }
 
-        // Load saved font preference or use default font
-        if (PlayerPrefs.HasKey(selectedFontKey))
-        {
-            string fontName = PlayerPrefs.GetString(selectedFontKey);
-            selectedFont = GetFontByName(fontName);
-        }
-        else
-        {
-            selectedFont = defaultFont;
-        }
+        // Initialize selected font
+        selectedFont = normalFont;
 
-        ApplySelectedFontToTextMeshProText();
-
-        // Debug log to track loaded font
-        Debug.Log("Selected Font: " + selectedFont.name);
+        // Apply the selected font to all TextMeshProUGUI objects in the scene
+        SetFont();
     }
 
-    // Method to toggle between default and alternative fonts
     public void ToggleFont()
     {
-        if (selectedFont == defaultFont)
-        {
-            selectedFont = alternativeFont;
-        }
-        else
-        {
-            selectedFont = defaultFont;
-        }
+        // Toggle between normalFont and easyReadFont
+        selectedFont = (selectedFont == normalFont) ? easyReadFont : normalFont;
 
-        ApplySelectedFontToTextMeshProText();
-
-        // Save selected font preference
-        PlayerPrefs.SetString(selectedFontKey, selectedFont.name);
-        PlayerPrefs.Save();
-
-        // Debug log to track saved font
-        Debug.Log("Saved Font: " + selectedFont.name);
+        // Apply the selected font
+        SetFont();
     }
 
-    // Method to apply the selected font to all TextMeshPro Text components in the scene
-    private void ApplySelectedFontToTextMeshProText()
+    private void SetFont()
     {
-        TMP_Text[] textComponents = FindObjectsOfType<TMP_Text>();
+        // Find all TextMeshProUGUI objects in the scene
+        TextMeshProUGUI[] textObjects = FindObjectsOfType<TextMeshProUGUI>();
 
-        foreach (TMP_Text textComponent in textComponents)
+        // Apply the selected font to each TextMeshProUGUI object
+        foreach (TextMeshProUGUI textObject in textObjects)
         {
-            textComponent.font = selectedFont;
-        }
-    }
-
-    // Helper method to get font asset by name
-    private TMP_FontAsset GetFontByName(string fontName)
-    {
-        if (fontName == defaultFont.name)
-        {
-            return defaultFont;
-        }
-        else if (fontName == alternativeFont.name)
-        {
-            return alternativeFont;
-        }
-        else
-        {
-            Debug.LogWarning("Saved font not found. Defaulting to default font.");
-            return defaultFont;
+            textObject.font = selectedFont;
         }
     }
 }

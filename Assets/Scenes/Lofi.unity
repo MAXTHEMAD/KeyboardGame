@@ -4734,7 +4734,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   conversationPanel: {fileID: 2028631604}
   textDisplay: {fileID: 2028302381}
-  fontManager: {fileID: 1265132882}
+  normalFont: {fileID: 0}
+  easyReadFont: {fileID: 0}
+  displayDuration: 3
 --- !u!65 &243822131
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10287,7 +10289,7 @@ Transform:
   m_GameObject: {fileID: 657479706}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.6632431, z: -0, w: 0.7484041}
-  m_LocalPosition: {x: 94.7, y: -6.4900017, z: 702}
+  m_LocalPosition: {x: 94.7, y: -8.09, z: 702}
   m_LocalScale: {x: 4, y: 4, z: 9}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10307,7 +10309,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   conversationPanel: {fileID: 735905651}
   textDisplay: {fileID: 2028302381}
-  fontManager: {fileID: 1265132882}
+  normalFont: {fileID: 0}
+  easyReadFont: {fileID: 0}
+  displayDuration: 3
 --- !u!65 &657479709
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16949,7 +16953,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &735905652
 RectTransform:
   m_ObjectHideFlags: 0
@@ -17352,6 +17356,170 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4896567931528758279, guid: 547eda354139c8b4e9fdf2998bc48cd0, type: 3}
   m_PrefabInstance: {fileID: 764327017}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &765261617
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 765261618}
+  - component: {fileID: 765261621}
+  - component: {fileID: 765261620}
+  - component: {fileID: 765261619}
+  m_Layer: 0
+  m_Name: Gnome Running
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &765261618
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 765261617}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0.20172635, z: -0, w: 0.97944194}
+  m_LocalPosition: {x: 65.15, y: -3.1, z: 697.3}
+  m_LocalScale: {x: 5, y: 5, z: 5}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1978335000}
+  m_LocalEulerAnglesHint: {x: 0, y: 23.276, z: 0}
+--- !u!114 &765261619
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 765261617}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1688ea6afb61cf64ba939dd6b0261753, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundToPlay: {fileID: 8300000, guid: 157d1292b21abff4e8d6a0ffa8f31c02, type: 3}
+--- !u!65 &765261620
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 765261617}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!82 &765261621
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 765261617}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 157d1292b21abff4e8d6a0ffa8f31c02, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 0.645
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &766049114
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22338,7 +22506,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   conversationPanel: {fileID: 387572584}
   textDisplay: {fileID: 1725841506}
-  fontManager: {fileID: 1265132882}
+  normalFont: {fileID: 0}
+  easyReadFont: {fileID: 0}
+  displayDuration: 3
 --- !u!65 &1042713640
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -22786,8 +22956,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 24, y: 65}
-  m_SizeDelta: {x: 837.6902, y: 186.3579}
+  m_AnchoredPosition: {x: 269.61, y: 83.651}
+  m_SizeDelta: {x: 676.7734, y: 167.302}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1074438763
 MonoBehaviour:
@@ -22945,7 +23115,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   conversationPanel: {fileID: 2006025201}
   textDisplay: {fileID: 2069133471}
-  fontManager: {fileID: 1265132882}
+  normalFont: {fileID: 0}
+  easyReadFont: {fileID: 0}
+  displayDuration: 3
 --- !u!65 &1081073750
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -27988,8 +28160,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 741309df7a0a7f842ad0ffe968e43143, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultFont: {fileID: 11400000, guid: d3f463fb4757e0847b6fa4430f00d561, type: 2}
-  alternativeFont: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  normalFont: {fileID: 11400000, guid: d3f463fb4757e0847b6fa4430f00d561, type: 2}
+  easyReadFont: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   selectedFont: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
 --- !u!4 &1265132883
 Transform:
@@ -47079,6 +47251,7 @@ Transform:
   - {fileID: 24512770}
   - {fileID: 1549791560}
   - {fileID: 2003679904}
+  - {fileID: 765261618}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1982382385
@@ -52944,7 +53117,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &2028631605
 MonoBehaviour:
   m_ObjectHideFlags: 0
