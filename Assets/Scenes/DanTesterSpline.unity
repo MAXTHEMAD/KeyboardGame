@@ -20,7 +20,7 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.5360003, g: 0.6886792, b: 0.6469472, a: 1}
+  m_AmbientSkyColor: {r: 0.7176471, g: 0.81960785, b: 0.7921569, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
@@ -4615,7 +4615,7 @@ Animator:
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: ac737a3cbb67ac34a8093cf137fbc13e, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 0
+  m_UpdateMode: 2
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
@@ -4639,21 +4639,8 @@ MonoBehaviour:
   pointA: {fileID: 1391439453}
   pointB: {fileID: 713573436}
   pointC: {fileID: 1328574178}
-  speed: 22
-  delaySeconds: 5.7
---- !u!114 &147957329
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 147957322}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e71987ec327a5b42adb5a87ec8cfdc1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  delaySeconds: 2.7
+  speed: 21
+  delaySeconds: 5.9
 --- !u!114 &147957331
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4666,7 +4653,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b3f76bb8ac37e547b780f5d878702ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delaySeconds: 2.7
+  delaySeconds: 3
   idleAnimationClip: {fileID: 1827226128182048838, guid: b00597e91942cbb48bc0e2dfac9801b3, type: 3}
 --- !u!1001 &150097163
 PrefabInstance:
@@ -33523,8 +33510,8 @@ Animator:
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 9f58f9fc461a29d4ea52241376fe735f, type: 2}
-  m_CullingMode: 1
-  m_UpdateMode: 1
+  m_CullingMode: 0
+  m_UpdateMode: 0
   m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
@@ -56125,9 +56112,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 0b5dbabe52bd09a4389af352e8c8887b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 147957324}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 0b5dbabe52bd09a4389af352e8c8887b, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 147957329}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 0b5dbabe52bd09a4389af352e8c8887b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 147957328}
