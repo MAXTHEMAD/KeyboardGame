@@ -155,7 +155,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   conversationPanel: {fileID: 941051966}
   textDisplay: {fileID: 1204394562}
-  fontManager: {fileID: 0}
+  normalFont: {fileID: 0}
+  easyReadFont: {fileID: 0}
+  displayDuration: 3
 --- !u!65 &2992883
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -476,7 +478,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   conversationPanel: {fileID: 640066772}
   textDisplay: {fileID: 849546972}
-  fontManager: {fileID: 0}
+  normalFont: {fileID: 0}
+  easyReadFont: {fileID: 0}
+  displayDuration: 3
 --- !u!1 &8898487
 GameObject:
   m_ObjectHideFlags: 0
@@ -13261,7 +13265,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   conversationPanel: {fileID: 1083537711}
   textDisplay: {fileID: 1758394255}
-  fontManager: {fileID: 0}
+  normalFont: {fileID: 0}
+  easyReadFont: {fileID: 0}
+  displayDuration: 3
 --- !u!65 &385667943
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13967,8 +13973,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 741309df7a0a7f842ad0ffe968e43143, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultFont: {fileID: 11400000, guid: d3f463fb4757e0847b6fa4430f00d561, type: 2}
-  alternativeFont: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  normalFont: {fileID: 0}
+  easyReadFont: {fileID: 0}
   selectedFont: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
 --- !u!4 &401865228
 Transform:
@@ -26089,7 +26095,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   conversationPanel: {fileID: 1366705020}
   textDisplay: {fileID: 754794977}
-  fontManager: {fileID: 0}
+  normalFont: {fileID: 0}
+  easyReadFont: {fileID: 0}
+  displayDuration: 3
 --- !u!65 &805497787
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -30889,7 +30897,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   conversationPanel: {fileID: 103249033}
   textDisplay: {fileID: 535263252}
-  fontManager: {fileID: 0}
+  normalFont: {fileID: 0}
+  easyReadFont: {fileID: 0}
+  displayDuration: 3
 --- !u!65 &939086100
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -33962,7 +33972,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   conversationPanel: {fileID: 1935717442}
   textDisplay: {fileID: 1232409983}
-  fontManager: {fileID: 0}
+  normalFont: {fileID: 0}
+  easyReadFont: {fileID: 0}
+  displayDuration: 3
 --- !u!65 &1006507861
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -50380,7 +50392,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   conversationPanel: {fileID: 0}
   textDisplay: {fileID: 0}
-  fontManager: {fileID: 0}
+  normalFont: {fileID: 0}
+  easyReadFont: {fileID: 0}
+  displayDuration: 3
 --- !u!65 &1307574531
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -55289,7 +55303,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 217, y: -156}
-  m_SizeDelta: {x: 802.8979, y: 211.4693}
+  m_SizeDelta: {x: 803, y: 211}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1469640435
 MonoBehaviour:
@@ -63688,7 +63702,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   conversationPanel: {fileID: 387572584}
   textDisplay: {fileID: 1725841506}
-  fontManager: {fileID: 0}
+  normalFont: {fileID: 0}
+  easyReadFont: {fileID: 0}
+  displayDuration: 3
 --- !u!1 &1692286592
 GameObject:
   m_ObjectHideFlags: 0
@@ -71207,7 +71223,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   conversationPanel: {fileID: 1733041021}
   textDisplay: {fileID: 1692286593}
-  fontManager: {fileID: 0}
+  normalFont: {fileID: 0}
+  easyReadFont: {fileID: 0}
+  displayDuration: 3
 --- !u!65 &1919848518
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -73376,7 +73394,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   conversationPanel: {fileID: 207277975}
   textDisplay: {fileID: 1941395495}
-  fontManager: {fileID: 0}
+  normalFont: {fileID: 0}
+  easyReadFont: {fileID: 0}
+  displayDuration: 3
 --- !u!65 &1971368966
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -74653,7 +74673,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   conversationPanel: {fileID: 1936131081}
   textDisplay: {fileID: 0}
-  fontManager: {fileID: 0}
+  normalFont: {fileID: 0}
+  easyReadFont: {fileID: 0}
+  displayDuration: 3
 --- !u!65 &2001696567
 BoxCollider:
   m_ObjectHideFlags: 0

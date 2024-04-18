@@ -1825,6 +1825,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   qualityText: {fileID: 892584241}
+  waterElements: []
+  shaders: []
 --- !u!114 &1447748065
 MonoBehaviour:
   m_ObjectHideFlags: 0
