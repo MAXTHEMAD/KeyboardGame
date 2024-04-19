@@ -2577,7 +2577,7 @@ RectTransform:
   m_Father: {fileID: 1616604121}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 3.2923965, y: -0.000012397766}
   m_SizeDelta: {x: 13.4151, y: 0.000029564}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -3840,7 +3840,7 @@ RectTransform:
   m_Father: {fileID: 371442545}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 3.2923965, y: -0.000012397766}
   m_SizeDelta: {x: 13.4151, y: 0.000029564}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -3931,8 +3931,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 551099c1746b0de47892b33b61c503f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  normalFont: {fileID: 11400000, guid: d3f463fb4757e0847b6fa4430f00d561, type: 2}
-  easyReadFont: {fileID: 11400000, guid: f0031d9c627382c4e90d85e314ba49ca, type: 2}
 --- !u!1001 &1055298959
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4942,8 +4940,8 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1289029058}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -6592,8 +6590,8 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1456137165}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -6850,8 +6848,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 551099c1746b0de47892b33b61c503f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  normalFont: {fileID: 11400000, guid: d3f463fb4757e0847b6fa4430f00d561, type: 2}
-  easyReadFont: {fileID: 11400000, guid: f0031d9c627382c4e90d85e314ba49ca, type: 2}
 --- !u!1 &1603547401
 GameObject:
   m_ObjectHideFlags: 0
@@ -9297,7 +9293,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1889922660
 RectTransform:
   m_ObjectHideFlags: 0
