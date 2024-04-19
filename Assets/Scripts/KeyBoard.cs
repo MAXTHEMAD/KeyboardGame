@@ -14,7 +14,7 @@ using UnityEngine.Events;
 public class KeyBoard : MonoBehaviour
 {
     public GameObject keyCubePrefab;
-    public Keys keys;
+    Keys keys;
     [SerializeField] FeedBackText feedBackText;
     [SerializeField] float timingWindow = 0.5f;
     [SerializeField] float panelDelay = 16;
@@ -22,8 +22,8 @@ public class KeyBoard : MonoBehaviour
     public UnityEvent OnSongSuccess;
     public UnityEvent OnSongFailed;
 
-    UnityEngine.UI.Slider healthBar;
     Transform plane;
+    HUD hud;
 
     private float timeing;
     private int noteSpawnIndex;
@@ -35,9 +35,10 @@ public class KeyBoard : MonoBehaviour
 
     private void Awake()
     {
-        healthBar = GameObject.Find("HealthBar").GetComponent<UnityEngine.UI.Slider>();
+        hud = GameObject.Find("Canvas").GetComponent<HUD>();
+        keys = GetComponentInChildren<Keys>();
         plane = transform.Find("Plane");
-        panelDelay *= transform.lossyScale.x;
+        //panelDelay *= transform.lossyScale.x;
     }
 
     private void Update()
@@ -93,7 +94,7 @@ public class KeyBoard : MonoBehaviour
             if (health < 100)
             {
                 health = Time.deltaTime * 4 + health > 100 ? 100 : Time.deltaTime * 4 + health;
-                healthBar.value = health * 0.01f;
+                hud.SetHealth(health);
             }
             else if (health < 0)
             {
@@ -101,6 +102,7 @@ public class KeyBoard : MonoBehaviour
             }
             yield return null;
         }
+        Debug.Log(noteSpawnIndex);
         OnSongSuccess.Invoke();
     }
 
@@ -124,17 +126,33 @@ public class KeyBoard : MonoBehaviour
 
     public void KeyState(int key, bool active)
     {
+        if (!active)
+        {
+            int[] sharp = { 1, 3, 6, 8, 10, 13, 15, 18, 20, 22 };//all the black keys
+            if (Array.IndexOf(sharp, key) == -1)
+            {
+                keys.keysObj[key].transform.GetChild(0).GetComponent<MeshRenderer>().material = (Material)Resources.Load("White");
+            }
+            else
+            {
+                keys.keysObj[key].transform.GetChild(0).GetComponent<MeshRenderer>().material = (Material)Resources.Load("Black");
+            }
+        }
         Song.note noteEffected = notesOnboard.FirstOrDefault(x => x.key == key);
         if (noteEffected.end == 0)//(object.Equals(noteEffected, null))
         {
+            if(active)
+                keys.keysObj[key].transform.GetChild(0).GetComponent<MeshRenderer>().material = (Material)Resources.Load("Red");
             return;
         }
-        Debug.Log(noteEffected.start + " hehe " + noteEffected.end);
+        //Debug.Log(noteEffected.start + " hehe " + noteEffected.end);
         float timeingDiffrence = active ? Mathf.Abs(noteEffected.start - timeing) : Mathf.Abs(noteEffected.end - timeing);
         if (timeingDiffrence < timingWindow)
         {
             int scoreDiff = (int)((((timeingDiffrence / timingWindow) - 1) * -1) * 128);//replace magic with score var  //128 is perfect
             score += scoreDiff;
+            hud.SetScore(score);
+            Debug.Log(scoreDiff);
             //Debug.Log(scoreDiff);
             int scoreBand = 0;
             if (scoreDiff > 112)     //getting over 112 means you were within an eith of the timing window
@@ -176,32 +194,25 @@ public class KeyBoard : MonoBehaviour
         {
             MissedNote(noteEffected);
         }
-        if (!active)
-        {
-            int[] sharp = { 1, 3, 6, 8, 10, 13, 15, 18, 20, 22 };//all the black keys
-            if (Array.IndexOf(sharp, key) == -1) {
-                keys.keysObj[key].transform.GetChild(0).GetComponent<MeshRenderer>().material = (Material)Resources.Load("White");
-            } else {
-                keys.keysObj[key].transform.GetChild(0).GetComponent<MeshRenderer>().material = (Material)Resources.Load("Black");
-            }
-        }
+        
     }
 
-    public void StartSong(int songIndex) {
+    /*public void StartSong(int songIndex) {
         StopAllCoroutines();
         currentSong = Song.LoadSong(songIndex);
         noteSpawnIndex = 0;
         timeing = -panelDelay;
         notesOnboard.Clear();
-        StartCoroutine(AudioDelay());
+        StartCoroutine(AudioDelay());s
         StartCoroutine(SongPlaying());
-    }
+    }*/
     public void StartSong(string songName)
     {
         StopAllCoroutines();
         currentSong = Song.LoadSong(songName);
         noteSpawnIndex = 0;
         timeing = -panelDelay;
+        hud.Setup(currentSong.Length * 256);
         notesOnboard.Clear();
         StartCoroutine(AudioDelay());
         StartCoroutine(SongPlaying());
@@ -212,7 +223,8 @@ public class KeyBoard : MonoBehaviour
     {
         DestroyNote(note);
         health -= 22;
-        healthBar.value = health * 0.01f;
+        hud.SetHealth(health);
+        //healthBar.value = health * 0.01f;
     }
     void DestroyNote(Song.note note)
     {

@@ -10,13 +10,13 @@ public class Key : MonoBehaviour
     bool sharp;
     private void Awake()
     {
-        sharp = transform.localRotation.z != 0;
+        sharp = transform.localRotation.x != 0;
     }
 
     public void KeyPressed(float Strength) {
         //transform.localScale = new Vector3(transform.localScale.x, transform.localScale.y - Strength, transform.localScale.z);
-        transform.localRotation = Quaternion.Euler( new Vector3(0,0, sharp ? Strength * 3 - 1 : Strength * 4));
-        dynamics = Strength; Debug.Log("keyDown");
+        transform.localRotation = Quaternion.Euler( new Vector3(sharp ? -(Strength * 4 - 1) : -(Strength * 4),0,0));
+        dynamics = Strength; //Debug.Log("keyDown");
         if (audioIn)
         {
             GetComponent<Oscillator>().Go(Strength);
@@ -30,8 +30,8 @@ public class Key : MonoBehaviour
     }
     public void KeyReleased() {
         //transform.localScale = new Vector3(transform.localScale.x, (int)transform.localScale.y + 1, transform.localScale.z);
-        transform.localRotation = Quaternion.Euler(new Vector3(0,0, sharp ? -1 : 0));
-        Debug.Log("keyUp");
+        transform.localRotation = Quaternion.Euler(new Vector3(sharp ? -1 : 0 , 0 , 0));
+        //Debug.Log("keyUp");
         if (audioIn)
         {
             GetComponent<Oscillator>().Stop();
