@@ -1,36 +1,28 @@
 using UnityEngine;
-using TMPro;
 
 public class FontSwitcher : MonoBehaviour
 {
-    public TMP_FontAsset normalFont;
-    public TMP_FontAsset easyReadFont;
+    private FontManager fontManager;
 
-    private bool isEasyRead = false;
+    private void Start()
+    {
+        fontManager = FindObjectOfType<FontManager>();
+        if (fontManager == null)
+        {
+            Debug.LogError("FontManager not found in the scene!");
+        }
+    }
 
+    // This method should be called when the player wants to switch fonts
     public void ToggleFont()
     {
-        isEasyRead = !isEasyRead;
-
-        TextMeshProUGUI[] textObjects = FindObjectsOfType<TextMeshProUGUI>();
-
-        foreach (TextMeshProUGUI textObject in textObjects)
+        if (fontManager != null)
         {
-            if (textObject != null) // Check if the TextMeshProUGUI object is not null
-            {
-                if (isEasyRead)
-                {
-                    textObject.font = easyReadFont;
-                }
-                else
-                {
-                    textObject.font = normalFont;
-                }
-            }
-            else
-            {
-                Debug.LogWarning("TextMeshProUGUI object is null.");
-            }
+            fontManager.ToggleFont(); // Toggle between default and dyslexic fonts
+        }
+        else
+        {
+            Debug.LogWarning("FontManager is null. Font switching failed.");
         }
     }
 }

@@ -5,9 +5,18 @@ public class PanelConvo : MonoBehaviour
 {
     public GameObject conversationPanel;
     public TextMeshProUGUI textDisplay;
-    public TMP_FontAsset normalFont;
-    public TMP_FontAsset easyReadFont;
     public float displayDuration = 3.0f;
+
+    private FontManager fontManager;
+
+    private void Start()
+    {
+        fontManager = FindObjectOfType<FontManager>();
+        if (fontManager == null)
+        {
+            Debug.LogError("FontManager not found in the scene!");
+        }
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -19,26 +28,19 @@ public class PanelConvo : MonoBehaviour
 
     private void StartConversation()
     {
-        if (conversationPanel != null && textDisplay != null)
+        if (conversationPanel != null && textDisplay != null && fontManager != null)
         {
             conversationPanel.SetActive(true);
 
-            // Copy text from TextMeshProUGUI component to textDisplay
-            TextMeshProUGUI textMesh = conversationPanel.GetComponent<TextMeshProUGUI>();
-            if (textMesh != null)
-            {
-                textDisplay.text = textMesh.text;
-            }
-
             // Apply font based on the current setting
-            FontManager fontManager = FindObjectOfType<FontManager>();
-            if (fontManager != null)
-            {
-                textDisplay.font = fontManager.IsEasyReadMode ? easyReadFont : normalFont;
-            }
+            textDisplay.font = fontManager.selectedFont;
 
             // End conversation after display duration
             Invoke("EndConversation", displayDuration);
+        }
+        else
+        {
+            Debug.LogWarning("Conversation panel, text display, or FontManager is null.");
         }
     }
 

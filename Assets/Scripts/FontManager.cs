@@ -3,29 +3,30 @@ using TMPro;
 
 public class FontManager : MonoBehaviour
 {
-    public bool IsEasyReadMode { get; set; }
+    public TMP_FontAsset defaultFont; // LuckiestGuy SDF
+    public TMP_FontAsset dyslexicFont; // opendyslexic SDF
 
-    public TMP_FontAsset normalFont;
-    public TMP_FontAsset easyReadFont;
+    public TMP_FontAsset selectedFont { get; private set; }
 
-    public TMP_FontAsset selectedFont;
 
     private static FontManager instance;
 
     private void Awake()
     {
+
         if (instance == null)
         {
             instance = this;
-            DontDestroyOnLoad(gameObject);
+            DontDestroyOnLoad(gameObject); // Ensure FontManager persists across scenes
         }
         else
         {
             Destroy(gameObject);
         }
+        
 
-        // Initialize selected font
-        selectedFont = normalFont;
+        // Initialize selected font to default font
+        selectedFont = defaultFont;
 
         // Apply the selected font to all TextMeshProUGUI objects in the scene
         SetFont();
@@ -33,8 +34,8 @@ public class FontManager : MonoBehaviour
 
     public void ToggleFont()
     {
-        // Toggle between normalFont and easyReadFont
-        selectedFont = (selectedFont == normalFont) ? easyReadFont : normalFont;
+        // Toggle between defaultFont and dyslexicFont
+        selectedFont = (selectedFont == defaultFont) ? dyslexicFont : defaultFont;
 
         // Apply the selected font
         SetFont();
