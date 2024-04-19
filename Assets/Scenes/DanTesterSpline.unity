@@ -13975,7 +13975,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   normalFont: {fileID: 0}
   easyReadFont: {fileID: 0}
-  selectedFont: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  selectedFont: {fileID: 11400000, guid: f0031d9c627382c4e90d85e314ba49ca, type: 2}
 --- !u!4 &401865228
 Transform:
   m_ObjectHideFlags: 0
