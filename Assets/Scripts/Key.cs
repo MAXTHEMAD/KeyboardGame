@@ -8,9 +8,12 @@ public class Key : MonoBehaviour
     public bool audioIn = false;
     float dynamics;
     bool sharp;
+    [HideInInspector]
+    public Material strMaterial;
     private void Awake()
     {
         sharp = transform.localRotation.x != 0;
+        strMaterial = GetComponent<MeshRenderer>().material;
     }
 
     public void KeyPressed(float Strength) {

@@ -131,18 +131,18 @@ public class KeyBoard : MonoBehaviour
             int[] sharp = { 1, 3, 6, 8, 10, 13, 15, 18, 20, 22 };//all the black keys
             if (Array.IndexOf(sharp, key) == -1)
             {
-                keys.keysObj[key].transform.GetChild(0).GetComponent<MeshRenderer>().material = (Material)Resources.Load("White");
+                keys.keysObj[key].transform.GetComponent<MeshRenderer>().material = keys.keysObj[key].strMaterial;
             }
             else
             {
-                keys.keysObj[key].transform.GetChild(0).GetComponent<MeshRenderer>().material = (Material)Resources.Load("Black");
+                keys.keysObj[key].transform.GetComponent<MeshRenderer>().material = keys.keysObj[key].strMaterial;
             }
         }
         Song.note noteEffected = notesOnboard.FirstOrDefault(x => x.key == key);
         if (noteEffected.end == 0)//(object.Equals(noteEffected, null))
         {
             if(active)
-                keys.keysObj[key].transform.GetChild(0).GetComponent<MeshRenderer>().material = (Material)Resources.Load("Red");
+                keys.keysObj[key].transform.GetComponent<MeshRenderer>().material = (Material)Resources.Load("Red");
             return;
         }
         //Debug.Log(noteEffected.start + " hehe " + noteEffected.end);
@@ -177,7 +177,7 @@ public class KeyBoard : MonoBehaviour
                 try
                 {
                     noteEffected.keyCube.GetComponent<MeshRenderer>().material = (Material)Resources.Load("scoreCol" + scoreBand);
-                    keys.keysObj[key].transform.GetChild(0).GetComponent<MeshRenderer>().material = (Material)Resources.Load("scoreCol" + scoreBand);
+                    keys.keysObj[key].transform.GetComponent<MeshRenderer>().material = (Material)Resources.Load("scoreCol" + scoreBand);
                 }
                 catch (Exception e)
                 {
