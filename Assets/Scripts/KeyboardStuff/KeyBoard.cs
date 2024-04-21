@@ -105,7 +105,7 @@ public class KeyBoard : MonoBehaviour
             yield return null;
         }
         Debug.Log(noteSpawnIndex);
-        
+        SongSuccesded();
     }
     IEnumerator AudioDelay()
     {

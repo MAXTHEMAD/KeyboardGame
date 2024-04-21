@@ -8053,6 +8053,10 @@ PrefabInstance:
       propertyPath: feedBackText
       value: 
       objectReference: {fileID: 2043113969}
+    - target: {fileID: 5445150517700226343, guid: 913db1c09e6d7ed4088220dad7e33965, type: 3}
+      propertyPath: keyCubePrefab
+      value: 
+      objectReference: {fileID: 2718403518418067694, guid: 0f0c32e26ff60df4bb06a7c52c89e5b8, type: 3}
     - target: {fileID: 7913857844590197970, guid: 913db1c09e6d7ed4088220dad7e33965, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.352
@@ -32163,13 +32167,13 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1409912609}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0.70710677, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: -553}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 254326858}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -13004, y: -180}
