@@ -6,23 +6,17 @@ using UnityEngine.UI;
 
 public class HUD : MonoBehaviour
 {
-    public List<Slider> HealthSliders;
-    public List<Slider> ScoreSliders;
+    public Slider HealthSlider;
+    public Slider ScoreSlider;
     public Image image;
     public void SetHealth(float health)
     {
-        foreach (Slider slider in HealthSliders)
-        {
-            slider.value = health;
-        }
+        HealthSlider.value = health;
     }
     public void SetScore(float score)
     {
-        foreach(Slider slider in ScoreSliders)
-        {
-            slider.value = score;
-        }
-        //image.fillAmount = score;
+        ScoreSlider.value = score;
+        image.fillAmount = Mathf.InverseLerp(0, ScoreSlider.maxValue,score);
     }
     public void SetHealthandScore(float health,float score)
     {
@@ -32,9 +26,6 @@ public class HUD : MonoBehaviour
     
     public void Setup(int maxScore)
     {
-        foreach (Slider slider in ScoreSliders)
-        {
-            slider.maxValue = maxScore;
-        }
+        ScoreSlider.maxValue = maxScore;
     }
 }

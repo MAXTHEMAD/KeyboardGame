@@ -3572,6 +3572,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6f9540c0f43abd46bd6c7515f3777b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lofi: {fileID: 93544140}
+  funk: {fileID: 1253011944}
 --- !u!4 &1367801511 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4896567931528758279, guid: 547eda354139c8b4e9fdf2998bc48cd0, type: 3}

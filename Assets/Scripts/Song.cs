@@ -6,19 +6,10 @@ using UnityEngine;
 
 public class Song
 {
-    note[] songOne = { new note(1, 3, 0), new note(4, 7, 0), new note(5, 7, 4), new note(6, 7, 5), new note(9, 13, 2), new note(14, 15, 0), new note(14, 15, 5) };
-    song singSong = new song("hat",new note[]{ new note(1, 3, 0), new note(4, 7, 0), new note(5, 7, 4)});
-    static song[] songs = {
-        new song( 
-            "TestSong", 
-            new note[] { new note(1, 3, 0), new note(4, 7, 0), new note(5, 7, 4), new note(6, 7, 5), new note(9, 13, 2), new note(14, 15, 0), new note(14, 15, 5)}),
-        new song(
-            "allKeys",
-            new note[] { new note(0, 1, 0), new note(1, 2, 1), new note(2, 3, 2), new note(3, 4, 3), new note(4, 5, 4), new note(5, 6, 5), new note(6, 7, 6), new note(7, 8, 7), new note(8, 9, 8), new note(9, 10, 9), new note(10, 11, 10), new note(11, 12, 11), new note(12, 13, 12),
-                new note(13, 14, 13), new note(14, 15, 14), new note(15, 16, 15), new note(16, 17, 16), new note(17, 18, 17), new note(18, 19, 18), new note(19, 20, 19), new note(20, 21, 20), new note(21, 22, 21), new note(22, 23, 22), new note(23, 24, 23), new note(24, 25, 24)}),
-        new song(
-            "Funk",
-            new note[]{new note(10.676f, 11.944f, 3),    new note(12f, 13.352f, 0), new note(13.328f, 14.704f, 2), new note(16.008f, 17.284f, 3),    new note(17.333f, 18.666f, 0),    new note(18.677f, 20.006f, 2),
+    static Dictionary<string, note[]> songs = new Dictionary<string, note[]>()
+    {
+        {"Funk",
+         new note[]{new note(10.676f, 11.944f, 3),    new note(12f, 13.352f, 0), new note(13.328f, 14.704f, 2), new note(16.008f, 17.284f, 3),    new note(17.333f, 18.666f, 0),    new note(18.677f, 20.006f, 2),
                        new note(21.350f, 22.602f, 3),    new note(22.667f, 24.020f, 0),    new note(24f, 25.364f, 2), new note(25.336f, 25.937f, 7),    new note(25.988f, 26.639f, 5),    new note(26.639f, 28.095f, 3),    new note(28.054f, 29.367f, 0), new note(29.367f, 30.568f, 2), new note(30.640f, 31.138f, 7),  new note(31.322f, 31.759f, 10),  new note(32.014f, 32.594f, 12),
                        new note(34.029f, 34.701f, 15), new note(34.701f, 36.544f, 12), new note(36.696f, 37.287f, 15), new note(37.368f, 39.323f, 12), new note(39.373f, 40.035f, 10), new note(40.076f, 42.132f, 7),
                        new note(42.661f, 44.219f, 12),  new note(44.005f, 45.288f, 10), new note(45.359f, 46.560f, 14), new note(46.662f, 47.710f, 12),
@@ -49,15 +40,11 @@ public class Song
                        new note(205.306f, 205.448f, 7), new note(205.815f, 205.927f, 7), new note(206.253f, 206.365f, 7), new note(206.609f, 206.711f, 5),
                        new note(207.973f, 208.105f, 9), new note(208.482f, 208.614f, 9), new note(208.950f, 209.052f, 9), new note(209.306f, 209.398f, 7),
                        new note(210.630f, 210.742f, 12), new note(211.128f, 211.220f, 12), new note(211.576f, 211.658f, 12), new note(211.984f, 212.065f, 10),
-                       new note(213.337f, 217.480f, 7), new note(213.337f, 217.480f, 10), new note(217.979f, 218.325f, 9), new note(217.979f, 218.325f, 12), new note(218.681f, 220.880f, 10), new note(218.681f, 220.880f, 14), new note(221.348f, 223.191f, 9), new note(221.348f, 223.191f, 12),  new note(223.354f, 223.710f, 9), new note(223.354f, 223.710f, 12),
-            }),
-        new song(
-            "cads",
-            new note[] { new note(1, 3, 0), new note(4, 7, 0), new note(5, 7, 4), new note(6, 7, 5), new note(9, 13, 2), new note(14, 15, 0), new note(14, 15, 5)}),
+                       new note(213.337f, 217.480f, 7), new note(213.337f, 217.480f, 10), new note(217.979f, 218.325f, 9), new note(217.979f, 218.325f, 12), new note(218.681f, 220.880f, 10), new note(218.681f, 220.880f, 14), new note(221.348f, 223.191f, 9), new note(221.348f, 223.191f, 12),  new note(223.354f, 223.710f, 9), new note(223.354f, 223.710f, 12) }
 
-        new song(
-            "Lofi",
-            new note[]{new note(10.105f, 11.330f, 12), new note(11.354f, 12.644f, 10), new note(12.651f, 13.829f, 14), new note(13.881f, 15.017f, 12),
+        },
+        {"Lofi",
+         new note[]{new note(10.105f, 11.330f, 12), new note(11.354f, 12.644f, 10), new note(12.651f, 13.829f, 14), new note(13.881f, 15.017f, 12),
                        new note(15.170f, 16.360f, 12), new note(16.391f, 17.622f, 10), new note(17.712f, 18.841f, 14), new note(18.940f, 20.040f, 12),
                        new note(20.214f, 21.442f, 12), new note(21.459f, 22.750f, 10), new note(22.759f, 23.961f, 14), new note(24.040f, 25.037f, 12),
                        new note(25.304f, 26.442f, 12), new note(26.540f, 27.828f, 10), new note(27.821f, 28.951f, 14), new note(29.063f, 29.786f, 12),
@@ -71,8 +58,13 @@ public class Song
                        new note(91.027f, 91.376f, 7),  new note(91.428f, 91.812f, 7), new note(91.903f, 93.217f, 5),  new note(93.486f, 93.274f, 5),  new note(93.961f, 94.257f, 5),  new note(94.436f, 95.803f, 3), new note(96.019f, 96.332f, 5), new note(96.491f, 96.728f, 5), new note(96.952f, 98.371f, 2), new note(98.531f, 99.344f, 2), new note(99.468f, 100.482f, 0),
                        new note(101.135f, 101.481f, 7),  new note(101.532f, 101.916f, 7), new note(102.009f, 103.321f, 5),  new note(103.590f, 103.903f, 5),  new note(104.071f, 104.362f, 5),  new note(104.544f, 105.910f, 3), new note(106.125f, 106.435f, 5), new note(106.598f, 106.836f, 5), new note(107.060f, 108.477f, 2), new note(108.635f, 109.452f, 2), new note(109.577f, 110.588f, 0),
                        new note(111.160f, 112.384f, 12), new note(112.403f, 113.698f, 10), new note(113.703f, 114.879f, 14), new note(114.931f, 116.069f, 12),
-                       new note(116.221f, 117.412f, 12), new note(117.445f, 118.673f, 10), new note(118.764f, 119.893f, 14), new note(119.990f, 121.092f, 12),
-            }),
+                       new note(116.221f, 117.412f, 12), new note(117.445f, 118.673f, 10), new note(118.764f, 119.893f, 14), new note(119.990f, 121.092f, 12) }
+
+        },
+        {"AllKeys",
+         new note[] { new note(0, 1, 0), new note(1, 2, 1), new note(2, 3, 2), new note(3, 4, 3), new note(4, 5, 4), new note(5, 6, 5), new note(6, 7, 6), new note(7, 8, 7), new note(8, 9, 8), new note(9, 10, 9), new note(10, 11, 10), new note(11, 12, 11), new note(12, 13, 12),
+                new note(13, 14, 13), new note(14, 15, 14), new note(15, 16, 15), new note(16, 17, 16), new note(17, 18, 17), new note(18, 19, 18), new note(19, 20, 19), new note(20, 21, 20), new note(21, 22, 21), new note(22, 23, 22), new note(23, 24, 23), new note(24, 25, 24)}
+        }
     };
 
     public struct note
@@ -91,33 +83,8 @@ public class Song
             keyCube = null;
         }
     }
-
-    struct song
-    {
-        public string name;
-        public note[] notes;
-        public song(string iName, note[] iNotes)
-        {
-            name = iName;
-            notes = iNotes;
-        }
-    }
-
-
-    public static note[] LoadSong(int songIndex)
-    {
-        return songs[songIndex].notes;
-    }
     public static note[] LoadSong(string songName)
     {
-        int songIndex = 0;
-        for (int i = 0; i < songs.Length; i++) {
-            if (songs[i].name == songName)
-            {
-                songIndex = i;
-                i = songs.Length;
-            }
-        }
-        return songs[songIndex].notes;
+        return songs[songName];
     }
 }

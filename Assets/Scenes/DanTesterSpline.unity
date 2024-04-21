@@ -8123,10 +8123,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01e7e5c30aafb6642b5d35fa322d1f7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HealthSliders:
-  - {fileID: 99686238}
-  ScoreSliders:
-  - {fileID: 1331522697}
+  HealthSlider: {fileID: 99686238}
+  ScoreSlider: {fileID: 1331522697}
   image: {fileID: 1918638925}
 --- !u!1 &255173092
 GameObject:
@@ -15842,6 +15840,22 @@ PrefabInstance:
       propertyPath: m_PlayOnAwake
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3035969875065741860, guid: 913db1c09e6d7ed4088220dad7e33965, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3035969875065741860, guid: 913db1c09e6d7ed4088220dad7e33965, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3035969875065741860, guid: 913db1c09e6d7ed4088220dad7e33965, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3035969875065741860, guid: 913db1c09e6d7ed4088220dad7e33965, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3060486665459094940, guid: 913db1c09e6d7ed4088220dad7e33965, type: 3}
       propertyPath: m_Layer
       value: 7
@@ -15926,6 +15940,10 @@ PrefabInstance:
       propertyPath: feedBackText
       value: 
       objectReference: {fileID: 1051755919}
+    - target: {fileID: 5445150517700226343, guid: 913db1c09e6d7ed4088220dad7e33965, type: 3}
+      propertyPath: keyCubePrefab
+      value: 
+      objectReference: {fileID: 2718403518418067694, guid: 0f0c32e26ff60df4bb06a7c52c89e5b8, type: 3}
     - target: {fileID: 6040212390389809828, guid: 913db1c09e6d7ed4088220dad7e33965, type: 3}
       propertyPath: m_Layer
       value: 7
@@ -70673,7 +70691,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 1
-  m_FillAmount: 1
+  m_FillAmount: 0
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0

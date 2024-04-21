@@ -10,6 +10,7 @@ using UnityEngine.InputSystem;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
 using UnityEngine.Events;
+using TMPro;
 
 public class KeyBoard : MonoBehaviour
 {
@@ -32,6 +33,7 @@ public class KeyBoard : MonoBehaviour
     List<Song.note> notesOnboard = new List<Song.note>();
                       
     Song.note[] currentSong;
+    string songName;
 
     private void Awake()
     {
@@ -99,19 +101,23 @@ public class KeyBoard : MonoBehaviour
             else if (health < 0)
             {
                 SongFailed();
-            }
+            }                         
             yield return null;
         }
         Debug.Log(noteSpawnIndex);
-        OnSongSuccess.Invoke();
+        
     }
-
     IEnumerator AudioDelay()
     {
         yield return new WaitForSeconds(panelDelay);
         GetComponent<AudioSource>().Play();
     }
 
+    private void SongSuccesded()
+    {
+        Scores.transferScore(score,songName);
+        OnSongSuccess.Invoke();
+    }
     private void SongFailed()
     {
         StopAllCoroutines();
@@ -176,7 +182,7 @@ public class KeyBoard : MonoBehaviour
             {
                 try
                 {
-                    noteEffected.keyCube.GetComponent<MeshRenderer>().material = (Material)Resources.Load("scoreCol" + scoreBand);
+                    noteEffected.keyCube.transform.GetChild(0).GetComponent<MeshRenderer>().material = (Material)Resources.Load("scoreCol" + scoreBand);
                     keys.keysObj[key].transform.GetComponent<MeshRenderer>().material = (Material)Resources.Load("scoreCol" + scoreBand);
                 }
                 catch (Exception e)
@@ -210,6 +216,7 @@ public class KeyBoard : MonoBehaviour
     {
         StopAllCoroutines();
         currentSong = Song.LoadSong(songName);
+        this.songName = songName;
         noteSpawnIndex = 0;
         timeing = -panelDelay;
         hud.Setup(currentSong.Length * 256);
@@ -233,26 +240,28 @@ public class KeyBoard : MonoBehaviour
     }
     void KeyCube(ref Song.note note)
     {
-        //Instantiate(keyCubePrefab,Vector3.forward * note.key,Quaternion.identity,transform.Find("Plane"),instantiateInWorldSpace:false);
+        
         GameObject prefab = Instantiate(keyCubePrefab, plane);
         int[] nonSharp = { 0, 2, 4, 5, 7, 9, 11, 12, 14,16,17,19,21,23,24 };//all the white keys
         int[] sharp = { 1, 3, 6, 8, 10, 13, 15, 18, 20, 22 };//all the black keys
         if (Array.IndexOf(sharp, note.key) != -1)
         {
             prefab.transform.localPosition = (Vector3.right * Array.IndexOf(nonSharp, note.key - 1)) + (Vector3.right * 0.75f);
-            prefab.transform.localScale = new Vector3(0.5f, 1, (note.end - note.start));
-            prefab.GetComponent<MeshRenderer>().material = (Material)Resources.Load("BlackCube");
+            prefab.transform.GetChild(0).localScale = new Vector3(0.5f, 1, (note.end - note.start));
+            prefab.transform.GetChild(0).GetComponent<MeshRenderer>().material = (Material)Resources.Load("BlackCube");
         }
         else if (Array.IndexOf(nonSharp, note.key) != -1)
         {
             prefab.transform.localPosition = Vector3.right * Array.IndexOf(nonSharp, note.key);
-            prefab.transform.localScale = new Vector3(1, 1, (note.end - note.start));
+            prefab.transform.GetChild(0).localScale = new Vector3(1, 1, (note.end - note.start));
         }
         else
         {
             Destroy(prefab);
             return;
         }
+        prefab.transform.GetChild(1).GetChild(0).GetComponent<TextMeshProUGUI>().text = (new string[25] { "C","C#","D","D#","E","F","F#","G","G#","A","A#","B"
+                                                                                                        , "C","C#","D","D#","E","F","F#","G","G#","A","A#","B","C"})[note.key];
         prefab.layer = 7;
         note.keyCube = prefab;
         notesOnboard.Add(note);
@@ -287,3 +296,29 @@ public class KeyBoard : MonoBehaviour
 //                    }
 //                }
 //            }
+//void KeyCube(ref Song.note note)
+//{
+//    //Instantiate(keyCubePrefab,Vector3.forward * note.key,Quaternion.identity,transform.Find("Plane"),instantiateInWorldSpace:false);
+//    GameObject prefab = Instantiate(keyCubePrefab, plane);
+//    int[] nonSharp = { 0, 2, 4, 5, 7, 9, 11, 12, 14, 16, 17, 19, 21, 23, 24 };//all the white keys
+//    int[] sharp = { 1, 3, 6, 8, 10, 13, 15, 18, 20, 22 };//all the black keys
+//    if (Array.IndexOf(sharp, note.key) != -1)
+//    {
+//        prefab.transform.localPosition = (Vector3.right * Array.IndexOf(nonSharp, note.key - 1)) + (Vector3.right * 0.75f);
+//        prefab.transform.localScale = new Vector3(0.5f, 1, (note.end - note.start));
+//        prefab.GetComponent<MeshRenderer>().material = (Material)Resources.Load("BlackCube");
+//    }
+//    else if (Array.IndexOf(nonSharp, note.key) != -1)
+//    {
+//        prefab.transform.localPosition = Vector3.right * Array.IndexOf(nonSharp, note.key);
+//        prefab.transform.localScale = new Vector3(1, 1, (note.end - note.start));
+//    }
+//    else
+//    {
+//        Destroy(prefab);
+//        return;
+//    }
+//    prefab.layer = 7;
+//    note.keyCube = prefab;
+//    notesOnboard.Add(note);
+//}
