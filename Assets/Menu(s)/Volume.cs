@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class Volume : MonoBehaviour
 {
-    [SerializeField] private Slider slider;
-    [SerializeField] private AudioSource audioSource;
+    public Slider slider; // Slider to control volume
+    public AudioSource audioSource; // Audio source to adjust volume
 
     private float initialVolume; // Store the initial volume level
 
@@ -29,7 +29,5 @@ public class Volume : MonoBehaviour
     {
         // Apply the volume level from the slider
         audioSource.volume = slider.value;
-
-       
     }
 }
