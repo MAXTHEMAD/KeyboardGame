@@ -3897,6 +3897,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1051469419}
   - component: {fileID: 1051469420}
+  - component: {fileID: 1051469421}
   m_Layer: 0
   m_Name: FontManager
   m_TagString: Untagged
@@ -3931,6 +3932,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 551099c1746b0de47892b33b61c503f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1051469421
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1051469417}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 741309df7a0a7f842ad0ffe968e43143, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultFont: {fileID: 11400000, guid: d3f463fb4757e0847b6fa4430f00d561, type: 2}
+  dyslexicFont: {fileID: 11400000, guid: f0031d9c627382c4e90d85e314ba49ca, type: 2}
 --- !u!1001 &1055298959
 PrefabInstance:
   m_ObjectHideFlags: 0
