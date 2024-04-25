@@ -8,6 +8,7 @@ TagManager:
   - Switch
   - ConversationTrigger
   - Gnome
+  - SoundEffect
   layers:
   - Default
   - TransparentFX
