@@ -40,7 +40,7 @@ public class PanelConvo : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning("Conversation panel, text display, or FontManager is null.");
+           
         }
     }
 

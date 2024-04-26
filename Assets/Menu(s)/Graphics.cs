@@ -3,11 +3,11 @@ using TMPro;
 
 public class Graphics : MonoBehaviour
 {
-    public TMP_Text qualityText; // Reference to the TMP_Text element
+    public TMP_Text qualityText; 
     private string[] qualityLevels = { "Very Low", "Low", "Medium", "High", "Very High", "Ultra" };
-    private int qualityLevelIndex = 0; // Index to track the current quality level
+    private int qualityLevelIndex = 0; // track current quality level
 
-    // References to water elements and shaders
+    
     public GameObject[] waterElements;
     public Renderer[] shaders;
 
