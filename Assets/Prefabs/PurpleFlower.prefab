@@ -48,6 +48,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: de043265a385d064bb9df5ee48eaa885, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: fbda17c5d79eb6e40af858165874e20b, type: 2}
+    - target: {fileID: -7511558181221131132, guid: de043265a385d064bb9df5ee48eaa885, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 4042e9cae7d414f49bf459d872c172fc, type: 2}
     - target: {fileID: 919132149155446097, guid: de043265a385d064bb9df5ee48eaa885, type: 3}
       propertyPath: m_Name
       value: PurpleFlower
