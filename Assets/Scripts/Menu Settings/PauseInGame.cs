@@ -1,6 +1,5 @@
-// GameManager.cs
-
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PauseInGame : MonoBehaviour
 {
@@ -37,5 +36,28 @@ public class PauseInGame : MonoBehaviour
 
         // Toggle the visibility of the options menu canvas
         optionsMenuCanvas.SetActive(isPaused);
+    }
+
+    void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        // Reset pause state when a new scene is loaded
+        isPaused = false;
+        Time.timeScale = 1f; // Ensure time scale is set to normal
+        optionsMenuCanvas.SetActive(false); // Hide options menu canvas
+        // Ensure all music audio sources are unpaused
+        foreach (AudioSource audioSource in musicAudioSources)
+        {
+            audioSource.UnPause();
+        }
     }
 }
