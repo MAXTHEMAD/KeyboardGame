@@ -31025,10 +31025,10 @@ RectTransform:
   - {fileID: 621350688}
   m_Father: {fileID: 159624000}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0.5}
-  m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -1321.13, y: -234}
-  m_SizeDelta: {x: 61.0386, y: 43.8412}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 220.75, y: 198.48001}
+  m_SizeDelta: {x: 61.038574, y: 43.841187}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &882501755
 MonoBehaviour:
@@ -56718,10 +56718,10 @@ RectTransform:
   - {fileID: 1752398814}
   m_Father: {fileID: 159624000}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0.5}
-  m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -831.5, y: -234}
-  m_SizeDelta: {x: 61.0386, y: 43.8412}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: -438.83, y: 198.48001}
+  m_SizeDelta: {x: 61.0386, y: 43.841187}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &1749772417
 MonoBehaviour:
@@ -56769,8 +56769,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 159624001}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
-        m_MethodName: ChangeScene
-        m_Mode: 5
+        m_MethodName: Exit
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
