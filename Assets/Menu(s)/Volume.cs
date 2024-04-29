@@ -19,7 +19,7 @@ public class Volume : MonoBehaviour
     private void HandleValueChanged(float value)
     {
         // Map the slider value 
-        float mappedValue = Mathf.Lerp(1f, 10f, value);
+        float mappedValue = Mathf.Lerp(0f, 10f, value);
 
         // Set the volume of the audio source
         audioSource.volume = mappedValue / 10f;
