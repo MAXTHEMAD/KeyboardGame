@@ -35981,7 +35981,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Exit
+  m_text: Menu
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d3f463fb4757e0847b6fa4430f00d561, type: 2}
   m_sharedMaterial: {fileID: -4337865219945376977, guid: d3f463fb4757e0847b6fa4430f00d561, type: 2}
@@ -47055,11 +47055,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1a4a0538ff01f0a4fba5aa302987286d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1a4a0538ff01f0a4fba5aa302987286d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 2.56
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1a4a0538ff01f0a4fba5aa302987286d, type: 3}
       propertyPath: m_LocalRotation.w
@@ -52231,7 +52231,7 @@ GameObject:
   - component: {fileID: 1302386380}
   - component: {fileID: 1302386379}
   m_Layer: 5
-  m_Name: Exit
+  m_Name: Menu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -57511,7 +57511,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -129}
+  m_AnchoredPosition: {x: 0, y: -167}
   m_SizeDelta: {x: 512, y: 256}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1452471524
@@ -57549,7 +57549,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: FAILURE \n Restart?
+  m_text: "You lost the groove\n \\n Restart?"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d3f463fb4757e0847b6fa4430f00d561, type: 2}
   m_sharedMaterial: {fileID: -4337865219945376977, guid: d3f463fb4757e0847b6fa4430f00d561, type: 2}
@@ -66159,7 +66159,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8693429294534006220, guid: cfa7c31fc79fc4d4eaa99bb070d3f1be, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 23.415146
+      value: 26.44
       objectReference: {fileID: 0}
     - target: {fileID: 8693429294534006220, guid: cfa7c31fc79fc4d4eaa99bb070d3f1be, type: 3}
       propertyPath: m_LocalPosition.z
@@ -83726,7 +83726,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6686673776706918604, guid: 1f94271de267c914985ba8308d7cc64b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.84
+      value: -3.28
       objectReference: {fileID: 0}
     - target: {fileID: 6686673776706918604, guid: 1f94271de267c914985ba8308d7cc64b, type: 3}
       propertyPath: m_LocalPosition.z
