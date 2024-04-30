@@ -98,7 +98,7 @@ public class KeyBoard : MonoBehaviour
                 health = Time.deltaTime * 4 + health > 100 ? 100 : Time.deltaTime * 4 + health;
                 hud.SetHealth(health);
             }
-            else if (health < 0)
+            if (health <= 0)
             {
                 SongFailed();
             }                         
@@ -123,8 +123,10 @@ public class KeyBoard : MonoBehaviour
         StopAllCoroutines();
         foreach (Song.note note in notesOnboard)
         {
-            DestroyNote(note);
+            Destroy(note.keyCube);
+            
         }
+        notesOnboard.Clear();
         GetComponent<AudioSource>().Stop();
         Debug.Log("Failed Song");
         OnSongFailed.Invoke();
