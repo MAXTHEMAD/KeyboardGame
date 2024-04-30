@@ -9611,7 +9611,7 @@ PrefabInstance:
       objectReference: {fileID: 2718403518418067694, guid: 0f0c32e26ff60df4bb06a7c52c89e5b8, type: 3}
     - target: {fileID: 5445150517700226343, guid: 913db1c09e6d7ed4088220dad7e33965, type: 3}
       propertyPath: OnSongFailed.m_PersistentCalls.m_Calls.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5445150517700226343, guid: 913db1c09e6d7ed4088220dad7e33965, type: 3}
       propertyPath: OnSongFailed.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -9622,6 +9622,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5445150517700226343, guid: 913db1c09e6d7ed4088220dad7e33965, type: 3}
+      propertyPath: OnSongFailed.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5445150517700226343, guid: 913db1c09e6d7ed4088220dad7e33965, type: 3}
       propertyPath: OnSongFailed.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1313744078}
@@ -9630,11 +9634,19 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1224538472785048556}
     - target: {fileID: 5445150517700226343, guid: 913db1c09e6d7ed4088220dad7e33965, type: 3}
+      propertyPath: OnSongFailed.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 998488007}
+    - target: {fileID: 5445150517700226343, guid: 913db1c09e6d7ed4088220dad7e33965, type: 3}
       propertyPath: OnSongFailed.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5445150517700226343, guid: 913db1c09e6d7ed4088220dad7e33965, type: 3}
       propertyPath: OnSongFailed.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5445150517700226343, guid: 913db1c09e6d7ed4088220dad7e33965, type: 3}
+      propertyPath: OnSongFailed.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5445150517700226343, guid: 913db1c09e6d7ed4088220dad7e33965, type: 3}
@@ -9646,12 +9658,20 @@ PrefabInstance:
       value: Pause
       objectReference: {fileID: 0}
     - target: {fileID: 5445150517700226343, guid: 913db1c09e6d7ed4088220dad7e33965, type: 3}
+      propertyPath: OnSongFailed.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: SetTrigger
+      objectReference: {fileID: 0}
+    - target: {fileID: 5445150517700226343, guid: 913db1c09e6d7ed4088220dad7e33965, type: 3}
       propertyPath: OnSongFailed.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: UnityEngine.GameObject, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 5445150517700226343, guid: 913db1c09e6d7ed4088220dad7e33965, type: 3}
       propertyPath: OnSongFailed.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
       value: UnityEngine.Splines.SplineAnimate, Unity.Splines
+      objectReference: {fileID: 0}
+    - target: {fileID: 5445150517700226343, guid: 913db1c09e6d7ed4088220dad7e33965, type: 3}
+      propertyPath: OnSongFailed.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: UnityEngine.Animator, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 5445150517700226343, guid: 913db1c09e6d7ed4088220dad7e33965, type: 3}
       propertyPath: OnSongFailed.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
@@ -9662,11 +9682,23 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5445150517700226343, guid: 913db1c09e6d7ed4088220dad7e33965, type: 3}
+      propertyPath: OnSongFailed.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5445150517700226343, guid: 913db1c09e6d7ed4088220dad7e33965, type: 3}
+      propertyPath: OnSongFailed.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_StringArgument
+      value: Death
+      objectReference: {fileID: 0}
+    - target: {fileID: 5445150517700226343, guid: 913db1c09e6d7ed4088220dad7e33965, type: 3}
       propertyPath: OnSongFailed.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 5445150517700226343, guid: 913db1c09e6d7ed4088220dad7e33965, type: 3}
       propertyPath: OnSongFailed.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 5445150517700226343, guid: 913db1c09e6d7ed4088220dad7e33965, type: 3}
+      propertyPath: OnSongFailed.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 7913857844590197970, guid: 913db1c09e6d7ed4088220dad7e33965, type: 3}
