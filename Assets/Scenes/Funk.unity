@@ -4620,7 +4620,7 @@ MonoBehaviour:
   pointA: {fileID: 1391439453}
   pointB: {fileID: 713573436}
   pointC: {fileID: 1328574178}
-  speed: 21
+  speed: 22
   delaySeconds: 5.9
 --- !u!114 &147957331
 MonoBehaviour:
@@ -4634,7 +4634,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b3f76bb8ac37e547b780f5d878702ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delaySeconds: 3
+  delaySeconds: 2.8
   idleAnimationClip: {fileID: 1827226128182048838, guid: b00597e91942cbb48bc0e2dfac9801b3, type: 3}
 --- !u!1001 &150097163
 PrefabInstance:
