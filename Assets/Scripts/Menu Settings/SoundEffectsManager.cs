@@ -2,25 +2,29 @@ using UnityEngine;
 
 public class SoundEffectsManager : MonoBehaviour
 {
-    private AudioSource[] soundEffectAudioSources;
+    private AudioSource[] audioSources;
 
-    private void Awake()
+    private string soundEffectsVolumePlayerPrefsKey = "SoundEffectsVolume";
+
+    private void Start()
     {
-        // Find all audio sources tagged as "SoundEffect"
-        GameObject[] soundEffectGameObjects = GameObject.FindGameObjectsWithTag("SoundEffect");
-        soundEffectAudioSources = new AudioSource[soundEffectGameObjects.Length];
+        // Find all audio sources in the scene
+        audioSources = FindObjectsOfType<AudioSource>();
 
-        for (int i = 0; i < soundEffectGameObjects.Length; i++)
+        // Load sound effects volume preference when the scene starts
+        if (PlayerPrefs.HasKey(soundEffectsVolumePlayerPrefsKey))
         {
-            soundEffectAudioSources[i] = soundEffectGameObjects[i].GetComponent<AudioSource>();
+            float savedVolume = PlayerPrefs.GetFloat(soundEffectsVolumePlayerPrefsKey);
+            SetSoundEffectsVolume(savedVolume);
         }
     }
 
     public void SetSoundEffectsVolume(float volume)
     {
-        foreach (var audioSource in soundEffectAudioSources)
+        // Set the volume of each audio source to the specified volume
+        foreach (AudioSource source in audioSources)
         {
-            audioSource.volume = volume;
+            source.volume = volume;
         }
     }
 }

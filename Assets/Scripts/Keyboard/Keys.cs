@@ -14,6 +14,7 @@ public class Keys : MonoBehaviour
 
     InputAction[] keysInput;
     float[] keyStrengths;
+    private string volumePlayerPrefsKey = "PianoVolume"; // PlayerPrefs key for saving volume
 
     private void Awake()
     {
@@ -21,10 +22,14 @@ public class Keys : MonoBehaviour
         keysInput = actions.FindActionMap("Midi").actions.ToArray();
         keysObj = transform.GetComponentsInChildren<Key>();
         keyStrengths = new float[keysInput.Length];
-    }
-
-    // Start is called before the first frame update
-    void Start()
+    
+    if (PlayerPrefs.HasKey(volumePlayerPrefsKey))
+        {
+            volume = PlayerPrefs.GetFloat(volumePlayerPrefsKey);
+        }
+}
+// Start is called before the first frame update
+void Start()
     {
         
     }
@@ -51,4 +56,11 @@ public class Keys : MonoBehaviour
             //transform.GetChild(i).GetComponent<RectTransform>().localScale = new Vector3(1,(1) - keysInput[i].ReadValue<float>(), 1);
         }
     }
+
+private void OnDestroy()
+{
+    // Save volume preference when the script is destroyed
+    PlayerPrefs.SetFloat(volumePlayerPrefsKey, volume);
+    PlayerPrefs.Save();
+}
 }

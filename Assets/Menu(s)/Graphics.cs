@@ -3,16 +3,18 @@ using TMPro;
 
 public class Graphics : MonoBehaviour
 {
-    public TMP_Text qualityText; 
+    public TMP_Text qualityText;
     private string[] qualityLevels = { "Very Low", "Low", "Medium", "High", "Very High", "Ultra" };
     private int qualityLevelIndex = 0; // track current quality level
 
-    
     public GameObject[] waterElements;
     public Renderer[] shaders;
 
     private void Start()
     {
+        // Automatically set to "Ultra" graphics quality
+        qualityLevelIndex = qualityLevels.Length - 1; // Set index to "Ultra"
+        ApplySettings(); // Apply "Ultra" settings
         UpdateQualityText();
     }
 

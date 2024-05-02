@@ -5,42 +5,45 @@ public class Brightness : MonoBehaviour
 {
     public Slider brightnessSlider;
 
+    private string brightnessPlayerPrefsKey = "Brightness";
+
     void Start()
     {
         // Load brightness PlayerPrefs
-        float savedBrightness = PlayerPrefs.GetFloat("Brightness", 1f);
+        if (PlayerPrefs.HasKey(brightnessPlayerPrefsKey))
+        {
+            float savedBrightness = PlayerPrefs.GetFloat(brightnessPlayerPrefsKey, 1f);
+            brightnessSlider.value = savedBrightness;
+            AdjustSceneBrightness(savedBrightness);
+        }
+        else
+        {
+            // If no preference saved, use default value
+            AdjustSceneBrightness(1f);
+        }
 
-        // Set the slider value to the saved brightness value
-        brightnessSlider.value = savedBrightness;
-
-        // Attach listener to the slider's value change event
         brightnessSlider.onValueChanged.AddListener(AdjustSceneBrightness);
-
-        // Adjust scene brightness based on the saved value
-        AdjustSceneBrightness(savedBrightness);
     }
 
     void AdjustSceneBrightness(float value)
     {
         // Set brightness value in PlayerPrefs
-        PlayerPrefs.SetFloat("Brightness", value);
+        PlayerPrefs.SetFloat(brightnessPlayerPrefsKey, value);
+        PlayerPrefs.Save();
 
-        // Map slider value to brightness linearly
-        float adjustedValue = value; // No need for non-linear mapping
+        float adjustedValue = value;
 
         // Get all lights in the scene
-        Light[] lights = FindObjectsOfType
-        <Light>();
+        Light[] lights = FindObjectsOfType<Light>();
 
-        // Loop through each light and adjust its intensity
         foreach (Light light in lights)
         {
-            // Adjust the intensity of the light based on the adjusted slider value
+            // Adjust light intensity
             light.intensity = adjustedValue;
 
             if (light.type == LightType.Spot || light.type == LightType.Point)
             {
-                // Adjust the range of the light based on the adjusted slider value
+                // Adjust light range for spot and point lights
                 light.range *= Mathf.Sqrt(adjustedValue);
             }
         }
