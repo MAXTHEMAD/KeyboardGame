@@ -1054,6 +1054,52 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2294192468046232103, guid: 46e574afbdf4cbf4ca698bc7eb544c41, type: 3}
   m_PrefabInstance: {fileID: 1106182423}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &371033398
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 371033400}
+  - component: {fileID: 371033399}
+  m_Layer: 0
+  m_Name: FontManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &371033399
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 371033398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 741309df7a0a7f842ad0ffe968e43143, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultFont: {fileID: 11400000, guid: d3f463fb4757e0847b6fa4430f00d561, type: 2}
+  dyslexicFont: {fileID: 11400000, guid: f0031d9c627382c4e90d85e314ba49ca, type: 2}
+--- !u!4 &371033400
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 371033398}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 631.58105, y: 162.33514, z: 1.6679982}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &372709322
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6326,3 +6372,4 @@ SceneRoots:
   - {fileID: 758619264}
   - {fileID: 1399645675}
   - {fileID: 9051541600961270281}
+  - {fileID: 371033400}
