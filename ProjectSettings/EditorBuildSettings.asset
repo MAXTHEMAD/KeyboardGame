@@ -18,6 +18,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Level_1_EndScreen.unity
     guid: 5460f17de5c2591429c5a8a2f40abd50
   - enabled: 1
+    path: Assets/Scenes/FunkHard.unity
+    guid: 6e225ebb1619a9d40bf720487e71c8f8
+  - enabled: 1
     path: Assets/Scenes/Lofi.unity
     guid: 02aced51b6c64a34481ef0f02684adc2
   - enabled: 1
