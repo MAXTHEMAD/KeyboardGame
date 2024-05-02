@@ -3,8 +3,8 @@ using UnityEngine.SceneManagement;
 
 public class PauseInGame : MonoBehaviour
 {
-    public GameObject optionsMenuCanvas; // Reference to your options menu canvas
-    public AudioSource[] musicAudioSources; // Reference to the audio sources playing music
+    public GameObject optionsMenuCanvas; 
+    public AudioSource[] musicAudioSources; 
     private bool isPaused = false;
 
     void Update()
@@ -19,9 +19,9 @@ public class PauseInGame : MonoBehaviour
     void ToggleOptionsMenu()
     {
         isPaused = !isPaused;
-        Time.timeScale = isPaused ? 0f : 1f; // Pause or resume the game
+        Time.timeScale = isPaused ? 0f : 1f; // Pause or resume game
 
-        // Pause or unpause music
+      
         foreach (AudioSource audioSource in musicAudioSources)
         {
             if (isPaused)
@@ -34,7 +34,7 @@ public class PauseInGame : MonoBehaviour
             }
         }
 
-        // Toggle the visibility of the options menu canvas
+        // Toggle visibility of the options menu canvas
         optionsMenuCanvas.SetActive(isPaused);
     }
 
@@ -52,9 +52,9 @@ public class PauseInGame : MonoBehaviour
     {
         // Reset pause state when a new scene is loaded
         isPaused = false;
-        Time.timeScale = 1f; // Ensure time scale is set to normal
+        Time.timeScale = 1f; 
         optionsMenuCanvas.SetActive(false); // Hide options menu canvas
-        // Ensure all music audio sources are unpaused
+        // Ensure all music unpaused
         foreach (AudioSource audioSource in musicAudioSources)
         {
             audioSource.UnPause();

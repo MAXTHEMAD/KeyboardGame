@@ -67190,6 +67190,7 @@ GameObject:
   - component: {fileID: 1713106897}
   - component: {fileID: 1713106896}
   - component: {fileID: 1713106895}
+  - component: {fileID: 1713106899}
   m_Layer: 5
   m_Name: PauseMenu
   m_TagString: Untagged
@@ -67293,6 +67294,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1713106899
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1713106894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e09bbbf4e2e99174a8bb0cb3dadfeeb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1716212079
 GameObject:
   m_ObjectHideFlags: 0

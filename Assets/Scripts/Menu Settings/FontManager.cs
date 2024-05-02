@@ -31,8 +31,15 @@ public class FontManager : MonoBehaviour
         // Apply the selected font 
         SetFont();
     }
+    public void ApplyFontToTextObjects(TextMeshProUGUI[] textObjects)
+    {
+        foreach (TextMeshProUGUI textObject in textObjects)
+        {
+            textObject.font = selectedFont;
+        }
+    }
 
-    public void ToggleFont()
+public void ToggleFont()
     {
         // Toggle between font
         selectedFont = (selectedFont == defaultFont) ? dyslexicFont : defaultFont;
