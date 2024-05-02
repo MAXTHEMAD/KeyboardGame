@@ -1,7 +1,5 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.ProBuilder.Shapes;
 
 public class Key : MonoBehaviour
 {
@@ -17,7 +15,6 @@ public class Key : MonoBehaviour
     }
 
     public void KeyPressed(float Strength) {
-        //transform.localScale = new Vector3(transform.localScale.x, transform.localScale.y - Strength, transform.localScale.z);
         transform.localRotation = Quaternion.Euler( new Vector3(sharp ? -(Strength * 4 - 1) : -(Strength * 4),0,0));
         dynamics = Strength; //Debug.Log("keyDown");
         if (audioIn)
@@ -32,9 +29,7 @@ public class Key : MonoBehaviour
         
     }
     public void KeyReleased() {
-        //transform.localScale = new Vector3(transform.localScale.x, (int)transform.localScale.y + 1, transform.localScale.z);
         transform.localRotation = Quaternion.Euler(new Vector3(sharp ? -1 : 0 , 0 , 0));
-        //Debug.Log("keyUp");
         if (audioIn)
         {
             GetComponent<Oscillator>().Stop();
@@ -54,10 +49,7 @@ public class Key : MonoBehaviour
     IEnumerator stopSound(float duration = 0.7f)
     {
         duration = duration < dynamics ? duration : dynamics;
-        //float time = Mathf.InverseLerp(0, duration, dynamics);
         float time = duration;
-        //Debug.Log(time);
-        //Debug.Log(dynamics);
         while (time > 0)
         {
             time -= Time.deltaTime;

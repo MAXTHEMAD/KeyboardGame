@@ -1,7 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Runtime.CompilerServices;
-using System.Security.Cryptography;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -14,7 +10,6 @@ public class Keys : MonoBehaviour
 
     InputAction[] keysInput;
     float[] keyStrengths;
-    private string volumePlayerPrefsKey = "PianoVolume"; // PlayerPrefs key for saving volume
 
     private void Awake()
     {
@@ -23,18 +18,10 @@ public class Keys : MonoBehaviour
         keysObj = transform.GetComponentsInChildren<Key>();
         keyStrengths = new float[keysInput.Length];
     
-    if (PlayerPrefs.HasKey(volumePlayerPrefsKey))
-        {
-            volume = PlayerPrefs.GetFloat(volumePlayerPrefsKey);
-        }
+        if (PlayerPrefs.HasKey("PianoVolume"))
+            volume = PlayerPrefs.GetFloat("PianoVolume");
 }
-// Start is called before the first frame update
-void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
     void Update()
     {
         for (int i = 0; i < keysInput.Length; i++)
@@ -53,14 +40,7 @@ void Start()
                     Keyboard.KeyState(i, false);
                 }
             }
-            //transform.GetChild(i).GetComponent<RectTransform>().localScale = new Vector3(1,(1) - keysInput[i].ReadValue<float>(), 1);
         }
     }
 
-private void OnDestroy()
-{
-    // Save volume preference when the script is destroyed
-    PlayerPrefs.SetFloat(volumePlayerPrefsKey, volume);
-    PlayerPrefs.Save();
-}
 }

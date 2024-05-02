@@ -1,10 +1,7 @@
-using System.Collections;
 using System.Collections.Generic;
-using System.Linq.Expressions;
-using TMPro;
 using UnityEngine;
 
-public class Song
+public static class Song
 {
     static Dictionary<string, note[]> songs = new Dictionary<string, note[]>()
     {

@@ -1,14 +1,8 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
-using System.Net;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.InputSystem;
-using UnityEngine.UI;
-using UnityEngine.UIElements;
 using UnityEngine.Events;
 using TMPro;
 
@@ -29,6 +23,7 @@ public class KeyBoard : MonoBehaviour
     private float timeing;
     private int noteSpawnIndex;
     private float health = 100;
+    private const int maxScore = 128;
     
     List<Song.note> notesOnboard = new List<Song.note>();
                       
@@ -47,23 +42,6 @@ public class KeyBoard : MonoBehaviour
     {
         Debug.DrawLine(plane.position - (plane.forward * panelDelay), (plane.position - (plane.forward * panelDelay)) + plane.right * panelDelay*2.4f,Color.red);
     }
-    /*private void OnDrawGizmos()
-    {
-        if (plane == null)
-            plane = transform.Find("Plane");
-        Gizmos.color = Color.red;
-        Vector3 str = transform.InverseTransformPoint(plane.position) - ((transform.InverseTransformPoint(plane.forward) * (panelDelay)));
-        // * plane.localScale.z)));
-        //str.z *= 0.1f;
-        Vector3 end = (transform.InverseTransformPoint(plane.position) - (plane.forward * panelDelay)) + plane.right * panelDelay * 2.4f;
-        //Gizmos.DrawLine(str, end);
-        //Gizmos.DrawLine(Vector3.zero, Vector3.up);
-        Vector3 startPoint = transform.InverseTransformPoint(plane.position - (plane.forward * panelDelay));
-        Vector3 endPoint = transform.InverseTransformPoint(plane.position + plane.right * panelDelay * 2.4f);
-
-        // Draw the line in local space
-        Gizmos.DrawLine(startPoint, endPoint);
-    }*/
 
     IEnumerator SongPlaying()
     {
@@ -157,7 +135,7 @@ public class KeyBoard : MonoBehaviour
         float timeingDiffrence = active ? Mathf.Abs(noteEffected.start - timeing) : Mathf.Abs(noteEffected.end - timeing);
         if (timeingDiffrence < timingWindow)
         {
-            int scoreDiff = (int)((((timeingDiffrence / timingWindow) - 1) * -1) * 128);//replace magic with score var  //128 is perfect
+            int scoreDiff = (int)((((timeingDiffrence / timingWindow) - 1) * -1) * maxScore);//128 is perfect
             score += scoreDiff;
             hud.SetScore(score);
             Debug.Log(scoreDiff);
@@ -204,16 +182,6 @@ public class KeyBoard : MonoBehaviour
         }
         
     }
-
-    /*public void StartSong(int songIndex) {
-        StopAllCoroutines();
-        currentSong = Song.LoadSong(songIndex);
-        noteSpawnIndex = 0;
-        timeing = -panelDelay;
-        notesOnboard.Clear();
-        StartCoroutine(AudioDelay());s
-        StartCoroutine(SongPlaying());
-    }*/
     public void StartSong(string songName)
     {
         StopAllCoroutines();
@@ -233,13 +201,16 @@ public class KeyBoard : MonoBehaviour
         DestroyNote(note);
         health -= 22;
         hud.SetHealth(health);
-        //healthBar.value = health * 0.01f;
     }
     void DestroyNote(Song.note note)
     {
         Destroy(note.keyCube);
         notesOnboard.Remove(note);
     }
+    /// <summary>
+    /// Spawns in a keyindicator
+    /// </summary>
+    /// <param name="note"></param>
     void KeyCube(ref Song.note note)
     {
         
@@ -269,58 +240,3 @@ public class KeyBoard : MonoBehaviour
         notesOnboard.Add(note);
     }
 }
-
-
-
-//legasy 
-//for (int i = 0; i < notesOnboard.Count; i++)
-//            {
-//                if (timeing >= notesOnboard[i].end)
-//                {
-//                    Destroy(notesOnboard[i].keyCube);
-//                    notesOnboard.Remove(notesOnboard[i]);
-//                    i--;
-//                    continue;
-//                }
-//                if (timeing >= notesOnboard[i].start - timingWindow)
-//                {
-//                    if (keys.keysObj[(int)notesOnboard[i].key].keyDown())
-//                    {
-//                        Debug.Log("good");
-
-//                    }
-//                    else if (timeing >= notesOnboard[i].start + timingWindow)
-//                    {
-//                        Destroy(notesOnboard[i].keyCube); 
-//                        notesOnboard.Remove(notesOnboard[i]);
-//                        i--;
-//                        Debug.Log("Bad");
-//                    }
-//                }
-//            }
-//void KeyCube(ref Song.note note)
-//{
-//    //Instantiate(keyCubePrefab,Vector3.forward * note.key,Quaternion.identity,transform.Find("Plane"),instantiateInWorldSpace:false);
-//    GameObject prefab = Instantiate(keyCubePrefab, plane);
-//    int[] nonSharp = { 0, 2, 4, 5, 7, 9, 11, 12, 14, 16, 17, 19, 21, 23, 24 };//all the white keys
-//    int[] sharp = { 1, 3, 6, 8, 10, 13, 15, 18, 20, 22 };//all the black keys
-//    if (Array.IndexOf(sharp, note.key) != -1)
-//    {
-//        prefab.transform.localPosition = (Vector3.right * Array.IndexOf(nonSharp, note.key - 1)) + (Vector3.right * 0.75f);
-//        prefab.transform.localScale = new Vector3(0.5f, 1, (note.end - note.start));
-//        prefab.GetComponent<MeshRenderer>().material = (Material)Resources.Load("BlackCube");
-//    }
-//    else if (Array.IndexOf(nonSharp, note.key) != -1)
-//    {
-//        prefab.transform.localPosition = Vector3.right * Array.IndexOf(nonSharp, note.key);
-//        prefab.transform.localScale = new Vector3(1, 1, (note.end - note.start));
-//    }
-//    else
-//    {
-//        Destroy(prefab);
-//        return;
-//    }
-//    prefab.layer = 7;
-//    note.keyCube = prefab;
-//    notesOnboard.Add(note);
-//}
